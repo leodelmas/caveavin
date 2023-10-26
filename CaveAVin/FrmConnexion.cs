@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CaveAVin.Models;
+using System.Security.Cryptography;
 
 namespace CaveAVin
 {
@@ -42,10 +43,13 @@ namespace CaveAVin
 
                 if (utilisateur != null)
                 {
-                    // Pour le moment, nous allons simplement comparer les mots de passe en clair
-                    if (utilisateur.MotDePasse == motDePasse)
+                    // Hasher le mot de passe
+                    string motDePasseHashed = HasherMotDePasse(motDePasse);
+
+                    // Comparer les mots de passe
+                    if (utilisateur.MotDePasse == motDePasseHashed)
                     {
-                        InformationsGlobales.IdJoueurConnecte = utilisateur.Id;
+                        //InformationsGlobales.IdJoueurConnecte = utilisateur.Id;
 
                         Close();
                         FrmAccueil frmAccueil = new FrmAccueil();
@@ -60,6 +64,24 @@ namespace CaveAVin
                 {
                     MessageBox.Show("Aucun utilisateur avec cet e-mail trouvé.");
                 }
+            }
+        }
+
+        private void TxbAdresseMail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        private string HasherMotDePasse(string motDePasse)
+        {
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                byte[] bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(motDePasse));
+                StringBuilder builder = new StringBuilder();
+                for (int i = 0; i < bytes.Length; i++)
+                {
+                    builder.Append(bytes[i].ToString("x2"));
+                }
+                return builder.ToString();
             }
         }
     }

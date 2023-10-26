@@ -30,8 +30,8 @@
         {
             LblAdresseMail = new Label();
             LblMotDePasse = new Label();
-            TxbAdresseMail = new TextBox();
-            TxbMotDePasse = new TextBox();
+            TbxAdresseMail = new TextBox();
+            TbxMotDePasse = new TextBox();
             BtnConnexion = new Button();
             SuspendLayout();
             // 
@@ -54,20 +54,21 @@
             LblMotDePasse.Text = "Mot de passe :";
             LblMotDePasse.Click += LblMotDePasse_Click;
             // 
-            // TxbAdresseMail
+            // TbxAdresseMail
             // 
-            TxbAdresseMail.Location = new Point(170, 44);
-            TxbAdresseMail.Name = "TxbAdresseMail";
-            TxbAdresseMail.Size = new Size(174, 27);
-            TxbAdresseMail.TabIndex = 2;
+            TbxAdresseMail.Location = new Point(170, 44);
+            TbxAdresseMail.Name = "TbxAdresseMail";
+            TbxAdresseMail.Size = new Size(174, 27);
+            TbxAdresseMail.TabIndex = 2;
+            TbxAdresseMail.TextChanged += TxbAdresseMail_TextChanged;
             // 
-            // TxbMotDePasse
+            // TbxMotDePasse
             // 
-            TxbMotDePasse.Location = new Point(170, 86);
-            TxbMotDePasse.Name = "TxbMotDePasse";
-            TxbMotDePasse.PasswordChar = '*';
-            TxbMotDePasse.Size = new Size(174, 27);
-            TxbMotDePasse.TabIndex = 3;
+            TbxMotDePasse.Location = new Point(170, 86);
+            TbxMotDePasse.Name = "TbxMotDePasse";
+            TbxMotDePasse.PasswordChar = '*';
+            TbxMotDePasse.Size = new Size(174, 27);
+            TbxMotDePasse.TabIndex = 3;
             // 
             // BtnConnexion
             // 
@@ -85,8 +86,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(478, 219);
             Controls.Add(BtnConnexion);
-            Controls.Add(TxbMotDePasse);
-            Controls.Add(TxbAdresseMail);
+            Controls.Add(TbxMotDePasse);
+            Controls.Add(TbxAdresseMail);
             Controls.Add(LblMotDePasse);
             Controls.Add(LblAdresseMail);
             Name = "FrmConnexion";
@@ -99,8 +100,8 @@
 
         private Label LblAdresseMail;
         private Label LblMotDePasse;
-        private TextBox TxbAdresseMail;
-        private TextBox TxbMotDePasse;
+        private TextBox TbxAdresseMail;
+        private TextBox TbxMotDePasse;
         private Button BtnConnexion;
     }
 }
