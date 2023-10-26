@@ -30,7 +30,7 @@
         {
             BtnGestionDesCaves = new Button();
             BtnBouteillesApogee = new Button();
-            BtnExport = new Button();
+            BtnExporter = new Button();
             SuspendLayout();
             // 
             // BtnGestionDesCaves
@@ -50,22 +50,24 @@
             BtnBouteillesApogee.TabIndex = 1;
             BtnBouteillesApogee.Text = "Mes bouteilles à l'apogée";
             BtnBouteillesApogee.UseVisualStyleBackColor = true;
+            BtnBouteillesApogee.Click += BtnBouteillesApogee_Click;
             // 
-            // BtnExport
+            // BtnExporter
             // 
-            BtnExport.Location = new Point(457, 42);
-            BtnExport.Name = "BtnExport";
-            BtnExport.Size = new Size(193, 29);
-            BtnExport.TabIndex = 2;
-            BtnExport.Text = "Exportation des données";
-            BtnExport.UseVisualStyleBackColor = true;
+            BtnExporter.Location = new Point(457, 42);
+            BtnExporter.Name = "BtnExporter";
+            BtnExporter.Size = new Size(193, 29);
+            BtnExporter.TabIndex = 2;
+            BtnExporter.Text = "Exportation des données";
+            BtnExporter.UseVisualStyleBackColor = true;
+            BtnExporter.Click += BtnExporter_Click;
             // 
             // FrmAccueil
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(686, 112);
-            Controls.Add(BtnExport);
+            Controls.Add(BtnExporter);
             Controls.Add(BtnBouteillesApogee);
             Controls.Add(BtnGestionDesCaves);
             Name = "FrmAccueil";
@@ -77,6 +79,6 @@
 
         private Button BtnGestionDesCaves;
         private Button BtnBouteillesApogee;
-        private Button BtnExport;
+        private Button BtnExporter;
     }
 }

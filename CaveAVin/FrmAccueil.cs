@@ -16,5 +16,15 @@ namespace CaveAVin
         {
             InitializeComponent();
         }
+
+        private void BtnExporter_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnBouteillesApogee_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
