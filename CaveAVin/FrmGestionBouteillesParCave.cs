@@ -143,6 +143,41 @@ namespace CaveAVin
             FrmAvis1 frmAvis = new FrmAvis1(bouteille.IdBouteille);
             frmAvis.ShowDialog();
         }
+
+        private void BtnExporter_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog
+            {
+                Filter = "Fichiers CSV (*.csv)|*.csv",
+                Title = "Sauvegardez votre fichier CSV",
+                FileName = "bouteilles.csv",
+                InitialDirectory = Application.StartupPath
+            };
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                List<List<string>> donneesBrutes = new List<List<string>>();
+                List<string> entetes = new List<string>
+                {
+                    "NomComplet",
+                    "Millesime",
+                    "Année garde min",
+                    "Année garde max",
+                    "Tirroir",
+                    "Emplacement",
+                    "Couleur",
+                    "Appellation"
+                };
+                donneesBrutes.Add(entetes);
+
+                foreach (Bouteille bouteille in LbxBouteilleParCave.Items)
+                {
+                    donneesBrutes.Add(bouteille.ToCsvRow());
+                }
+
+                Csv csv = new Csv(sfd.FileName);
+                csv.Enregistrer(donneesBrutes);
+            }
+        }
     }
 }
 

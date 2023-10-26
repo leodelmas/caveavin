@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
+            BtnAvis = new Button();
             TbxRecherche = new TextBox();
             BtnEffacer = new Button();
             BtnChercher = new Button();
@@ -37,12 +38,13 @@
             BtnModifierBouteille = new Button();
             BtnAjouterBouteille = new Button();
             LbxBouteilleParCave = new ListBox();
-            BtnAvis = new Button();
+            BtnExporter = new Button();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(BtnExporter);
             groupBox1.Controls.Add(BtnAvis);
             groupBox1.Controls.Add(TbxRecherche);
             groupBox1.Controls.Add(BtnEffacer);
@@ -58,6 +60,16 @@
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
             groupBox1.Text = "Liste des bouteilles";
+            // 
+            // BtnAvis
+            // 
+            BtnAvis.Location = new Point(347, 96);
+            BtnAvis.Name = "BtnAvis";
+            BtnAvis.Size = new Size(111, 29);
+            BtnAvis.TabIndex = 9;
+            BtnAvis.Text = "Avis";
+            BtnAvis.UseVisualStyleBackColor = true;
+            BtnAvis.Click += BtnAvis_Click;
             // 
             // TbxRecherche
             // 
@@ -88,9 +100,9 @@
             // 
             // BtnRetour
             // 
-            BtnRetour.Location = new Point(236, 256);
+            BtnRetour.Location = new Point(347, 256);
             BtnRetour.Name = "BtnRetour";
-            BtnRetour.Size = new Size(105, 29);
+            BtnRetour.Size = new Size(111, 29);
             BtnRetour.TabIndex = 5;
             BtnRetour.Text = "Retour";
             BtnRetour.UseVisualStyleBackColor = true;
@@ -135,15 +147,15 @@
             LbxBouteilleParCave.Size = new Size(333, 204);
             LbxBouteilleParCave.TabIndex = 0;
             // 
-            // BtnAvis
+            // BtnExporter
             // 
-            BtnAvis.Location = new Point(347, 96);
-            BtnAvis.Name = "BtnAvis";
-            BtnAvis.Size = new Size(111, 29);
-            BtnAvis.TabIndex = 9;
-            BtnAvis.Text = "Avis";
-            BtnAvis.UseVisualStyleBackColor = true;
-            BtnAvis.Click += BtnAvis_Click;
+            BtnExporter.Location = new Point(191, 256);
+            BtnExporter.Name = "BtnExporter";
+            BtnExporter.Size = new Size(94, 29);
+            BtnExporter.TabIndex = 10;
+            BtnExporter.Text = "Exporter";
+            BtnExporter.UseVisualStyleBackColor = true;
+            BtnExporter.Click += BtnExporter_Click;
             // 
             // FrmGestionBouteillesParCave
             // 
@@ -171,5 +183,6 @@
         private Button BtnChercher;
         private TextBox TbxRecherche;
         private Button BtnAvis;
+        private Button BtnExporter;
     }
 }

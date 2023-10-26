@@ -66,7 +66,7 @@ namespace CaveAVin
 
         private void BtnValider_Click(object sender, EventArgs e)
         {
-            int idBouteille = ;
+            //int idBouteille = ;
             int idUtilisateur = InformationsGlobales.UtilisateurConnecte.IdUtilisateur;
             string commentaire = RtbCommentaire.Text;
 
@@ -112,7 +112,7 @@ namespace CaveAVin
         {
             using (var context = new CaveAvinContext())
             {
-                var avis = new Avis
+                /*var avis = new Avis
                 {
                     IdBouteille = idBouteille,
                     IdUtilisateur = idUtilisateur,
@@ -121,7 +121,7 @@ namespace CaveAVin
                 };
 
                 context.Avis.Add(avis);
-                context.SaveChanges();
+                context.SaveChanges(); */
             }
         }
 
