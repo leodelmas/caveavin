@@ -71,7 +71,10 @@ namespace CaveAVin
 
         private void BtnAfficherBouteilles_Click(object sender, EventArgs e)
         {
-
+            var caveSelectionnee = LbxCavesAVin.SelectedItem as Cave;
+            InformationsGlobales.CaveCourante = caveSelectionnee;
+            FrmGestionBouteillesParCave frmGestionBouteilles = new FrmGestionBouteillesParCave();
+            frmGestionBouteilles.Show();
         }
 
         private void FrmGestionDesCaves_Load(object sender, EventArgs e)

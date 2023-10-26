@@ -46,8 +46,6 @@
             TbxNumEmplacement = new TextBox();
             CbxIdCouleur = new ComboBox();
             CbxIdAppellation = new ComboBox();
-            CbxIdCave = new ComboBox();
-            label3 = new Label();
             BtnAnnuler = new Button();
             SuspendLayout();
             // 
@@ -116,7 +114,7 @@
             // 
             // BtnEnregistrer
             // 
-            BtnEnregistrer.Location = new Point(238, 304);
+            BtnEnregistrer.Location = new Point(238, 263);
             BtnEnregistrer.Name = "BtnEnregistrer";
             BtnEnregistrer.Size = new Size(166, 29);
             BtnEnregistrer.TabIndex = 14;
@@ -200,40 +198,22 @@
             CbxIdAppellation.Size = new Size(181, 28);
             CbxIdAppellation.TabIndex = 24;
             // 
-            // CbxIdCave
-            // 
-            CbxIdCave.FormattingEnabled = true;
-            CbxIdCave.Location = new Point(223, 255);
-            CbxIdCave.Name = "CbxIdCave";
-            CbxIdCave.Size = new Size(181, 28);
-            CbxIdCave.TabIndex = 25;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(22, 258);
-            label3.Name = "label3";
-            label3.Size = new Size(48, 20);
-            label3.TabIndex = 26;
-            label3.Text = "Cave :";
-            // 
             // BtnAnnuler
             // 
-            BtnAnnuler.Location = new Point(22, 304);
+            BtnAnnuler.Location = new Point(22, 263);
             BtnAnnuler.Name = "BtnAnnuler";
             BtnAnnuler.Size = new Size(166, 29);
             BtnAnnuler.TabIndex = 27;
             BtnAnnuler.Text = "Annuler";
             BtnAnnuler.UseVisualStyleBackColor = true;
+            BtnAnnuler.Click += BtnAnnuler_Click;
             // 
             // FrmBouteille
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(430, 352);
+            ClientSize = new Size(430, 310);
             Controls.Add(BtnAnnuler);
-            Controls.Add(label3);
-            Controls.Add(CbxIdCave);
             Controls.Add(CbxIdAppellation);
             Controls.Add(CbxIdCouleur);
             Controls.Add(TbxNumEmplacement);
@@ -254,6 +234,7 @@
             Controls.Add(LblNomComplet);
             Name = "FrmBouteille";
             Text = "Gestion d'une bouteille";
+            Load += FrmBouteille_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -278,8 +259,6 @@
         private TextBox TbxNumEmplacement;
         private ComboBox CbxIdCouleur;
         private ComboBox CbxIdAppellation;
-        private ComboBox CbxIdCave;
-        private Label label3;
         private Button BtnAnnuler;
     }
 }

@@ -6,19 +6,45 @@ namespace CaveAVin
     {
         private Bouteille _bouteille;
 
-        public FrmBouteille(Bouteille? bouteille = null)
+        public FrmBouteille(Bouteille bouteille = null)
         {
             InitializeComponent();
-            if (bouteille != null)
+            _bouteille = bouteille;
+        }
+
+        private void FrmBouteille_Load(object sender, EventArgs e)
+        {
+            // Complétion des champs externes
+            try
             {
-                _bouteille = bouteille;
+                using (CaveAvinContext db = new CaveAvinContext())
+                {
+                    var couleurs = db.Couleurs.ToList();
+                    CbxIdCouleur.DataSource = couleurs;
+                    CbxIdCouleur.DisplayMember = "Nom";
+                    CbxIdCouleur.ValueMember = "IdCouleur";
+                    var appellations = db.Appellations.ToList();
+                    CbxIdAppellation.DataSource = appellations;
+                    CbxIdAppellation.DisplayMember = "Nom";
+                    CbxIdAppellation.ValueMember = "IdAppellation";
+                }
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+
+            // Bouteille existante
+            if (_bouteille != null)
+            {
                 TbxNomComplet.Text = _bouteille.NomComplet;
                 TbxMillesime.Text = _bouteille.Millesime.ToString();
                 TbxAnneeGardeMin.Text = _bouteille.AnneeGardeMin.ToString();
                 TbxAnneeGardeMax.Text = _bouteille.AnneeGardeMax.ToString();
                 TbxNumTiroir.Text = _bouteille.NumTiroir.ToString();
                 TbxNumEmplacement.Text = _bouteille.NumEmplacement.ToString();
-                // TODO : Cave, Appellation, Couleur
+                CbxIdCouleur.SelectedItem = _bouteille.IdCouleur;
+                CbxIdAppellation.SelectedItem = _bouteille.IdAppellationNavigation;
             }
             else
             {
@@ -40,8 +66,7 @@ namespace CaveAVin
                     _bouteille.NumEmplacement = int.Parse(TbxNumEmplacement.Text);
                     _bouteille.IdCouleur = ((Couleur)CbxIdCouleur.SelectedItem).IdCouleur;
                     _bouteille.IdAppellation = ((Appellation)CbxIdAppellation.SelectedItem).IdAppellation;
-                    _bouteille.IdCave = ((Cave)CbxIdCave.SelectedItem).IdCave;
-
+                    _bouteille.IdCave = InformationsGlobales.CaveCourante.IdCave;
 
                     if (_bouteille.IdBouteille == 0)
                     {
@@ -53,11 +78,17 @@ namespace CaveAVin
                     }
                     db.SaveChanges();
                 }
+                Close();
             }
             catch (Exception exception)
             {
                 MessageBox.Show(exception.Message);
             }
+        }
+
+        private void BtnAnnuler_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

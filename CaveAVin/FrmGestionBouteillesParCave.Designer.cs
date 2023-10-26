@@ -29,85 +29,86 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
+            BtnRetour = new Button();
             BtnSupprimerBouteille = new Button();
             BtnModifierBouteille = new Button();
             BtnAjouterBouteille = new Button();
-            BtnAfficherBouteilles = new Button();
             LbxBouteilleParCave = new ListBox();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(BtnRetour);
             groupBox1.Controls.Add(BtnSupprimerBouteille);
             groupBox1.Controls.Add(BtnModifierBouteille);
             groupBox1.Controls.Add(BtnAjouterBouteille);
-            groupBox1.Controls.Add(BtnAfficherBouteilles);
             groupBox1.Controls.Add(LbxBouteilleParCave);
             groupBox1.Location = new Point(12, 12);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(381, 306);
+            groupBox1.Size = new Size(464, 297);
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
             groupBox1.Text = "Liste des bouteilles";
             // 
+            // BtnRetour
+            // 
+            BtnRetour.Location = new Point(236, 256);
+            BtnRetour.Name = "BtnRetour";
+            BtnRetour.Size = new Size(105, 29);
+            BtnRetour.TabIndex = 5;
+            BtnRetour.Text = "Retour";
+            BtnRetour.UseVisualStyleBackColor = true;
+            BtnRetour.Click += BtnRetour_Click;
+            // 
             // BtnSupprimerBouteille
             // 
-            BtnSupprimerBouteille.Location = new Point(184, 131);
+            BtnSupprimerBouteille.Location = new Point(347, 61);
             BtnSupprimerBouteille.Name = "BtnSupprimerBouteille";
-            BtnSupprimerBouteille.Size = new Size(166, 29);
+            BtnSupprimerBouteille.Size = new Size(111, 29);
             BtnSupprimerBouteille.TabIndex = 4;
-            BtnSupprimerBouteille.Text = "Supprimer la bouteille";
+            BtnSupprimerBouteille.Text = "Supprimer";
             BtnSupprimerBouteille.UseVisualStyleBackColor = true;
             BtnSupprimerBouteille.Click += BtnSupprimerBouteille_Click;
             // 
             // BtnModifierBouteille
             // 
-            BtnModifierBouteille.Location = new Point(184, 86);
+            BtnModifierBouteille.Location = new Point(347, 26);
             BtnModifierBouteille.Name = "BtnModifierBouteille";
-            BtnModifierBouteille.Size = new Size(166, 29);
+            BtnModifierBouteille.Size = new Size(111, 29);
             BtnModifierBouteille.TabIndex = 3;
-            BtnModifierBouteille.Text = "Modifier la bouteille";
+            BtnModifierBouteille.Text = "Editer";
             BtnModifierBouteille.UseVisualStyleBackColor = true;
             BtnModifierBouteille.Click += BtnModifierBouteille_Click;
             // 
             // BtnAjouterBouteille
             // 
-            BtnAjouterBouteille.Location = new Point(184, 39);
+            BtnAjouterBouteille.Location = new Point(8, 256);
             BtnAjouterBouteille.Name = "BtnAjouterBouteille";
-            BtnAjouterBouteille.Size = new Size(166, 29);
+            BtnAjouterBouteille.Size = new Size(105, 29);
             BtnAjouterBouteille.TabIndex = 2;
-            BtnAjouterBouteille.Text = "Ajouter bouteille";
+            BtnAjouterBouteille.Text = "Ajouter";
             BtnAjouterBouteille.UseVisualStyleBackColor = true;
             BtnAjouterBouteille.Click += BtnAjouterBouteille_Click;
-            // 
-            // BtnAfficherBouteilles
-            // 
-            BtnAfficherBouteilles.Location = new Point(6, 263);
-            BtnAfficherBouteilles.Name = "BtnAfficherBouteilles";
-            BtnAfficherBouteilles.Size = new Size(344, 29);
-            BtnAfficherBouteilles.TabIndex = 1;
-            BtnAfficherBouteilles.Text = "Afficher les bouteilles";
-            BtnAfficherBouteilles.UseVisualStyleBackColor = true;
-            BtnAfficherBouteilles.Click += BtnAfficherBouteilles_Click;
             // 
             // LbxBouteilleParCave
             // 
             LbxBouteilleParCave.FormattingEnabled = true;
             LbxBouteilleParCave.ItemHeight = 20;
-            LbxBouteilleParCave.Location = new Point(6, 26);
+            LbxBouteilleParCave.Location = new Point(8, 26);
             LbxBouteilleParCave.Name = "LbxBouteilleParCave";
-            LbxBouteilleParCave.Size = new Size(172, 224);
+            LbxBouteilleParCave.Size = new Size(333, 224);
             LbxBouteilleParCave.TabIndex = 0;
             // 
             // FrmGestionBouteillesParCave
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(630, 330);
+            ClientSize = new Size(490, 324);
             Controls.Add(groupBox1);
             Name = "FrmGestionBouteillesParCave";
-            Text = "FrmGestionBouteillesParCave";
+            Text = "Gestion des bouteilles";
+            Load += FrmGestionBouteillesParCave_Load;
             groupBox1.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -118,7 +119,7 @@
         private Button BtnSupprimerBouteille;
         private Button BtnModifierBouteille;
         private Button BtnAjouterBouteille;
-        private Button BtnAfficherBouteilles;
         private ListBox LbxBouteilleParCave;
+        private Button BtnRetour;
     }
 }
