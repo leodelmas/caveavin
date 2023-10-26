@@ -14,13 +14,17 @@ namespace CaveAVin
     public partial class FrmAvis1 : Form
     {
         private int noteActuelle = 0;
-        private int idBouteille;
+        public int Id { get; set; }
+        public int IdBouteille { get; set; }
+        public int IdUtilisateur { get; set; }
+        public int Note { get; set; }
+        public string Commentaire { get; set; }
 
         public FrmAvis1(int idBouteille)
         {
             InitializeComponent();
-            this.idBouteille = idBouteille;
-            AfficherInfosBouteille(this.idBouteille);
+            this.IdBouteille = idBouteille;
+            AfficherInfosBouteille(this.IdBouteille);
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -66,12 +70,13 @@ namespace CaveAVin
 
         private void BtnValider_Click(object sender, EventArgs e)
         {
-            int idBouteille = ;
+            int idBouteille = IdBouteille;
             int idUtilisateur = InformationsGlobales.UtilisateurConnecte.IdUtilisateur;
             string commentaire = RtbCommentaire.Text;
 
             EnregistrerAvis(idBouteille, idUtilisateur, noteActuelle, commentaire);
             MessageBox.Show("Avis enregistré avec succès!");
+            Close();
         }
 
         private void MettreAJourEtoiles(int note)
@@ -112,18 +117,29 @@ namespace CaveAVin
         {
             using (var context = new CaveAvinContext())
             {
-                var avis = new Avis
+                // Vérifiez si un avis existe déjà pour cette combinaison utilisateur-bouteille
+                var avisExistant = context.Avis
+                    .FirstOrDefault(a => a.IdBouteille == idBouteille && a.IdUtilisateur == idUtilisateur);
+
+                if (avisExistant != null)
+                {
+                    MessageBox.Show("Vous avez déjà laissé un avis pour cette bouteille.");
+                    return;
+                }
+
+                var avis = new Avi
                 {
                     IdBouteille = idBouteille,
                     IdUtilisateur = idUtilisateur,
                     Note = note,
-                    Commentaire = commentaire
+                    Texte = commentaire
                 };
 
                 context.Avis.Add(avis);
                 context.SaveChanges();
             }
         }
+
 
     }
 }
