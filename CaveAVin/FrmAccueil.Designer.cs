@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAccueil));
             BtnGestionDesCaves = new Button();
             BtnBouteillesApogee = new Button();
             GbxGestion = new GroupBox();
@@ -100,13 +101,18 @@
             // 
             // FrmAccueil
             // 
+            AcceptButton = BtnGestionDesCaves;
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            CancelButton = BtnDeconnexion;
             ClientSize = new Size(291, 227);
             Controls.Add(BtnQuitter);
             Controls.Add(BtnDeconnexion);
             Controls.Add(LblUtilisateur);
             Controls.Add(GbxGestion);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
             Name = "FrmAccueil";
             Text = "Logiciel de gestion de cave à vin";
             GbxGestion.ResumeLayout(false);

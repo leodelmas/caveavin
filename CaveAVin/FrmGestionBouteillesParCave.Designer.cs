@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmGestionBouteillesParCave));
             groupBox1 = new GroupBox();
+            BtnExporter = new Button();
             BtnAvis = new Button();
             TbxRecherche = new TextBox();
             BtnEffacer = new Button();
@@ -38,7 +40,6 @@
             BtnModifierBouteille = new Button();
             BtnAjouterBouteille = new Button();
             LbxBouteilleParCave = new ListBox();
-            BtnExporter = new Button();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -60,6 +61,16 @@
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
             groupBox1.Text = "Liste des bouteilles";
+            // 
+            // BtnExporter
+            // 
+            BtnExporter.Location = new Point(191, 256);
+            BtnExporter.Name = "BtnExporter";
+            BtnExporter.Size = new Size(94, 29);
+            BtnExporter.TabIndex = 10;
+            BtnExporter.Text = "Exporter";
+            BtnExporter.UseVisualStyleBackColor = true;
+            BtnExporter.Click += BtnExporter_Click;
             // 
             // BtnAvis
             // 
@@ -147,22 +158,17 @@
             LbxBouteilleParCave.Size = new Size(333, 204);
             LbxBouteilleParCave.TabIndex = 0;
             // 
-            // BtnExporter
-            // 
-            BtnExporter.Location = new Point(191, 256);
-            BtnExporter.Name = "BtnExporter";
-            BtnExporter.Size = new Size(94, 29);
-            BtnExporter.TabIndex = 10;
-            BtnExporter.Text = "Exporter";
-            BtnExporter.UseVisualStyleBackColor = true;
-            BtnExporter.Click += BtnExporter_Click;
-            // 
             // FrmGestionBouteillesParCave
             // 
+            AcceptButton = BtnAjouterBouteille;
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            CancelButton = BtnRetour;
             ClientSize = new Size(490, 324);
             Controls.Add(groupBox1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
             Name = "FrmGestionBouteillesParCave";
             Text = "Gestion des bouteilles";
             Load += FrmGestionBouteillesParCave_Load;

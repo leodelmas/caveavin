@@ -75,8 +75,8 @@ namespace CaveAVin
             string commentaire = RtbCommentaire.Text;
 
             EnregistrerAvis(idBouteille, idUtilisateur, noteActuelle, commentaire);
-            MessageBox.Show("Avis enregistré avec succès!");
             Close();
+
         }
 
         private void MettreAJourEtoiles(int note)
@@ -125,6 +125,10 @@ namespace CaveAVin
                 {
                     MessageBox.Show("Vous avez déjà laissé un avis pour cette bouteille.");
                     return;
+                }
+                else
+                {
+                    MessageBox.Show("Avis enregistré avec succès!");
                 }
 
                 var avis = new Avi

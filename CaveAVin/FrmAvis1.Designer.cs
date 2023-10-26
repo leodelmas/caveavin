@@ -107,7 +107,7 @@
             // PbxEtoile2
             // 
             PbxEtoile2.Image = Properties.Resources.icone_etoile_vide_jaune;
-            PbxEtoile2.Location = new Point(192, 120);
+            PbxEtoile2.Location = new Point(191, 120);
             PbxEtoile2.Name = "PbxEtoile2";
             PbxEtoile2.Size = new Size(36, 37);
             PbxEtoile2.TabIndex = 6;
@@ -117,7 +117,7 @@
             // PbxEtoile3
             // 
             PbxEtoile3.Image = Properties.Resources.icone_etoile_vide_jaune;
-            PbxEtoile3.Location = new Point(248, 120);
+            PbxEtoile3.Location = new Point(247, 120);
             PbxEtoile3.Name = "PbxEtoile3";
             PbxEtoile3.Size = new Size(36, 37);
             PbxEtoile3.TabIndex = 7;
