@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             LbxApogee = new ListBox();
+            BtnRetour = new Button();
             SuspendLayout();
             // 
             // LbxApogee
@@ -37,23 +38,35 @@
             LbxApogee.ItemHeight = 20;
             LbxApogee.Location = new Point(12, 10);
             LbxApogee.Name = "LbxApogee";
-            LbxApogee.Size = new Size(190, 204);
+            LbxApogee.Size = new Size(262, 204);
             LbxApogee.TabIndex = 0;
             LbxApogee.SelectedIndexChanged += LbxApogee_SelectedIndexChanged;
+            // 
+            // BtnRetour
+            // 
+            BtnRetour.Location = new Point(56, 239);
+            BtnRetour.Name = "BtnRetour";
+            BtnRetour.Size = new Size(176, 29);
+            BtnRetour.TabIndex = 1;
+            BtnRetour.Text = "Retour";
+            BtnRetour.UseVisualStyleBackColor = true;
+            BtnRetour.Click += BtnRetour_Click;
             // 
             // FrmApogee
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(216, 225);
+            ClientSize = new Size(301, 280);
+            Controls.Add(BtnRetour);
             Controls.Add(LbxApogee);
             Name = "FrmApogee";
-            Text = "FrmApogee";
+            Text = "Bouteille(s) à l'apogée";
             ResumeLayout(false);
         }
 
         #endregion
 
         private ListBox LbxApogee;
+        private Button BtnRetour;
     }
 }
