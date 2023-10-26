@@ -176,6 +176,7 @@
             BtnAnnuler.TabIndex = 14;
             BtnAnnuler.Text = "Annuler";
             BtnAnnuler.UseVisualStyleBackColor = true;
+            BtnAnnuler.Click += BtnAnnuler_Click;
             // 
             // FrmCave
             // 

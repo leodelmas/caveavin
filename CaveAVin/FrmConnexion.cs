@@ -49,7 +49,7 @@ namespace CaveAVin
                     // Comparer les mots de passe
                     if (utilisateur.MotDePasse == motDePasseHashed)
                     {
-                        //InformationsGlobales.IdJoueurConnecte = utilisateur.Id;
+                        InformationsGlobales.UtilisateurConnecte = utilisateur;
 
                         Close();
                         FrmAccueil frmAccueil = new FrmAccueil();

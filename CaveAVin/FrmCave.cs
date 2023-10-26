@@ -22,6 +22,21 @@ namespace CaveAVin
 
         private void FrmCave_Load(object sender, EventArgs e)
         {
+            using (var context = new CaveAvinContext())
+            {
+                // Chargez les fabricants
+                var fabricants = context.Fabricants.ToList();
+                CbxFabricant.DataSource = fabricants;
+                CbxFabricant.DisplayMember = "Nom";
+                CbxFabricant.ValueMember = "IdFabricant";
+
+                // Continuez avec le chargement des familles comme précédemment
+                var familles = context.Familles.ToList();
+                CbxFamille.DataSource = familles;
+                CbxFamille.DisplayMember = "Nom";
+                CbxFamille.ValueMember = "IdFamille";
+            }
+
             if (_cave != null)
             {
                 // contrôles avec les données de _cave
@@ -81,21 +96,22 @@ namespace CaveAVin
                     _cave.NbTiroirs = int.Parse(TbxNombreTiroirs.Text);
                     _cave.NbBouteillesParTiroir = int.Parse(TbxNombreBouteillesParTiroir.Text);
                     _cave.TemperatureFonctionnement = int.Parse(TbxTemperature.Text);
-                    var fabricantSelectionne = CbxFabricant.SelectedItem as Fabricant;
-                    if (fabricantSelectionne != null)
-                    {
-                        _cave.IdFabricant = fabricantSelectionne.IdFabricant;
-                    }
-                    var familleSelectionnee = CbxFamille.SelectedItem as Famille;
-                    if (familleSelectionnee != null)
-                    {
-                        _cave.IdFamille = familleSelectionnee.IdFamille;
-                    }
+                    _cave.IdFabricant = (int)CbxFabricant.SelectedValue;
+                    _cave.IdFamille = (int)CbxFamille.SelectedValue;
 
                     context.SaveChanges();
                 }
                 this.Close();
+                FrmGestionDesCaves frmGestionDesCaves = new FrmGestionDesCaves();
+                frmGestionDesCaves.Show();
             }
+        }
+
+        private void BtnAnnuler_Click(object sender, EventArgs e)
+        {
+            Close();
+            FrmGestionDesCaves frmGestionDesCaves = new FrmGestionDesCaves();
+            frmGestionDesCaves.Show();
         }
     }
 }

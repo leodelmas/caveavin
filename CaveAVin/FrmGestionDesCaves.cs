@@ -33,7 +33,16 @@ namespace CaveAVin
 
         private void BtnModifierCave_Click(object sender, EventArgs e)
         {
+            var caveSelectionnee = LbxCavesAVin.SelectedItem as Cave;
+            if (caveSelectionnee == null)
+            {
+                MessageBox.Show("Veuillez sélectionner une cave à modifier.");
+                return;
+            }
 
+            Close();
+            FrmCave frmCave = new FrmCave(caveSelectionnee);
+            frmCave.Show();
         }
 
         private void BtnSupprimerCave_Click(object sender, EventArgs e)
