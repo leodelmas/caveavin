@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCaveAVin));
             BtnConnexion = new Button();
             BtnInscription = new Button();
             LblAppli = new Label();
@@ -36,7 +37,7 @@
             // 
             // BtnConnexion
             // 
-            BtnConnexion.Location = new Point(35, 79);
+            BtnConnexion.Location = new Point(12, 64);
             BtnConnexion.Name = "BtnConnexion";
             BtnConnexion.Size = new Size(117, 29);
             BtnConnexion.TabIndex = 0;
@@ -46,7 +47,7 @@
             // 
             // BtnInscription
             // 
-            BtnInscription.Location = new Point(265, 79);
+            BtnInscription.Location = new Point(153, 64);
             BtnInscription.Name = "BtnInscription";
             BtnInscription.Size = new Size(112, 29);
             BtnInscription.TabIndex = 1;
@@ -57,19 +58,19 @@
             // LblAppli
             // 
             LblAppli.AutoSize = true;
-            LblAppli.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point);
-            LblAppli.Location = new Point(1, 9);
+            LblAppli.Font = new Font("Bahnschrift SemiCondensed", 15F, FontStyle.Bold, GraphicsUnit.Point);
+            LblAppli.Location = new Point(25, 10);
             LblAppli.Name = "LblAppli";
-            LblAppli.Size = new Size(418, 35);
+            LblAppli.Size = new Size(234, 30);
             LblAppli.TabIndex = 2;
-            LblAppli.Text = "Application gestion de cave à Vins";
+            LblAppli.Text = "Gestion de cave à Vins";
             LblAppli.Click += label1_Click;
             // 
             // BtnQuitter
             // 
-            BtnQuitter.Location = new Point(120, 136);
+            BtnQuitter.Location = new Point(28, 120);
             BtnQuitter.Name = "BtnQuitter";
-            BtnQuitter.Size = new Size(176, 32);
+            BtnQuitter.Size = new Size(219, 32);
             BtnQuitter.TabIndex = 3;
             BtnQuitter.Text = "Quitter l'application";
             BtnQuitter.UseVisualStyleBackColor = true;
@@ -77,15 +78,22 @@
             // 
             // FrmCaveAVin
             // 
+            AcceptButton = BtnConnexion;
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(420, 193);
+            BackColor = SystemColors.ScrollBar;
+            CancelButton = BtnQuitter;
+            ClientSize = new Size(285, 163);
             Controls.Add(BtnQuitter);
             Controls.Add(LblAppli);
             Controls.Add(BtnInscription);
             Controls.Add(BtnConnexion);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
             Name = "FrmCaveAVin";
             Text = "Cave à vin";
+            Load += FrmCaveAVin_Load;
             ResumeLayout(false);
             PerformLayout();
         }

@@ -28,7 +28,12 @@ namespace CaveAVin
 
         private void BtnQuitter_Click(object sender, EventArgs e)
         {
-            Close();
+            Application.Exit();
+        }
+
+        private void FrmCaveAVin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

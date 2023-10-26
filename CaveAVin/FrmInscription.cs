@@ -39,24 +39,34 @@ namespace CaveAVin
                 return;
             }
 
+            // Valider le mot de passe
+            if (!ValiderMotDePasse(motDePasse))
+            {
+                MessageBox.Show("Le mot de passe ne respecte pas les critères de sécurité.");
+                return;
+            }
+
             using (var context = new CaveAvinContext())
             {
                 // Vérifiez si un utilisateur avec le même utilisateur existe déjà
-                var utilisateurExistant = context.Utilisateurs.FirstOrDefault(j => j.Email == email);
+                var utilisateurExistant = context.Utilisateurs.FirstOrDefault(u => u.Email == email);
                 if (utilisateurExistant != null)
                 {
-                    MessageBox.Show("Cet adresse mail est déjà utilisé par un autre utilisateur. Veuillez choisir un autre pseudo.");
+                    MessageBox.Show("Cet adresse mail est déjà utilisé par un autre utilisateur. Veuillez choisir un autre email.");
                     return;
                 }
 
-                // Hasher le mot de passe
-                string motDePasseHashed = HasherMotDePasse(motDePasse);
+                // Générez un sel aléatoire pour renforcer la sécurité du mot de passe
+                byte[] sel = GenererSelAleatoire(16);
 
-                // Créez un nouvel objet Joueur
+                // Hachez le mot de passe avec le sel
+                string motDePasseHache = HasherMotDePasse(motDePasse, sel);
+
+                // Créez un nouvel objet Utilisateur
                 var utilisateur = new Utilisateur
                 {
                     Email = email,
-                    MotDePasse = motDePasseHashed
+                    MotDePasse = motDePasseHache,
                 };
 
                 context.Utilisateurs.Add(utilisateur);
@@ -82,19 +92,29 @@ namespace CaveAVin
             }
         }
 
-        private string HasherMotDePasse(string motDePasse)
+        private string HasherMotDePasse(string motDePasse, byte[] sel)
         {
             using (SHA256 sha256 = SHA256.Create())
             {
-                byte[] bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(motDePasse));
+                // Combinez le mot de passe et le sel.
+                byte[] motDePasseBytes = Encoding.UTF8.GetBytes(motDePasse);
+                byte[] motDePasseSel = new byte[motDePasseBytes.Length + sel.Length];
+                Array.Copy(motDePasseBytes, motDePasseSel, motDePasseBytes.Length);
+                Array.Copy(sel, 0, motDePasseSel, motDePasseBytes.Length, sel.Length);
+
+                // Hachez le mot de passe combiné avec le sel.
+                byte[] hashBytes = sha256.ComputeHash(motDePasseSel);
+
+                // Convertissez le résultat en une chaîne hexadécimale.
                 StringBuilder builder = new StringBuilder();
-                for (int i = 0; i < bytes.Length; i++)
+                for (int i = 0; i < hashBytes.Length; i++)
                 {
-                    builder.Append(bytes[i].ToString("x2"));
+                    builder.Append(hashBytes[i].ToString("x2"));
                 }
                 return builder.ToString();
             }
         }
+ 
 
         private void BtnAnnuler_Click(object sender, EventArgs e)
         {
@@ -102,5 +122,36 @@ namespace CaveAVin
             FrmCaveAVin frmCaveAVin = new FrmCaveAVin();
             frmCaveAVin.Show();
         }
+        private bool ValiderMotDePasse(string motDePasse)
+        {
+            // Assurez-vous que le mot de passe a un nombre minimum de caractères.
+            if (motDePasse.Length < 8)
+            {
+                return false;
+            }
+
+            // Assurez-vous que le mot de passe contient au moins un caractère spécial.
+            if (!motDePasse.Any(char.IsPunctuation))
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        private byte[] GenererSelAleatoire(int longueur)
+        {
+            // Créez un générateur de nombres aléatoires.
+            Random random = new Random();
+
+            // Créez un tableau d'octets pour stocker le sel.
+            byte[] sel = new byte[longueur];
+
+            // Remplissez le tableau avec des octets aléatoires.
+            random.NextBytes(sel);
+
+            return sel;
+        }
+
     }
 }

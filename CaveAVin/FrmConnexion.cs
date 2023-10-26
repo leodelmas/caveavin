@@ -91,5 +91,10 @@ namespace CaveAVin
             FrmCaveAVin frmCaveAVin = new FrmCaveAVin();
             frmCaveAVin.Show();
         }
+
+        private void FrmConnexion_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

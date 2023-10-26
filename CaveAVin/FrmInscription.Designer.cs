@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmInscription));
             LblAdresseMail = new Label();
             LblMotDePasse = new Label();
             TbxAdresseMail = new TextBox();
@@ -39,7 +40,7 @@
             // LblAdresseMail
             // 
             LblAdresseMail.AutoSize = true;
-            LblAdresseMail.Location = new Point(37, 27);
+            LblAdresseMail.Location = new Point(41, 30);
             LblAdresseMail.Name = "LblAdresseMail";
             LblAdresseMail.Size = new Size(101, 20);
             LblAdresseMail.TabIndex = 0;
@@ -58,6 +59,7 @@
             // 
             TbxAdresseMail.Location = new Point(167, 27);
             TbxAdresseMail.Name = "TbxAdresseMail";
+            TbxAdresseMail.PlaceholderText = "utilisateur@domaine.fr";
             TbxAdresseMail.Size = new Size(210, 27);
             TbxAdresseMail.TabIndex = 2;
             // 
@@ -71,7 +73,7 @@
             // 
             // BtnInscription
             // 
-            BtnInscription.Location = new Point(37, 113);
+            BtnInscription.Location = new Point(36, 118);
             BtnInscription.Name = "BtnInscription";
             BtnInscription.Size = new Size(145, 29);
             BtnInscription.TabIndex = 4;
@@ -81,7 +83,7 @@
             // 
             // BtnAnnuler
             // 
-            BtnAnnuler.Location = new Point(220, 113);
+            BtnAnnuler.Location = new Point(220, 118);
             BtnAnnuler.Name = "BtnAnnuler";
             BtnAnnuler.Size = new Size(157, 29);
             BtnAnnuler.TabIndex = 5;
@@ -91,15 +93,20 @@
             // 
             // FrmInscription
             // 
+            AcceptButton = BtnInscription;
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(411, 175);
+            CancelButton = BtnAnnuler;
+            ClientSize = new Size(411, 168);
             Controls.Add(BtnAnnuler);
             Controls.Add(BtnInscription);
             Controls.Add(TbxMotDePasse);
             Controls.Add(TbxAdresseMail);
             Controls.Add(LblMotDePasse);
             Controls.Add(LblAdresseMail);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
             Name = "FrmInscription";
             Text = "Inscription";
             ResumeLayout(false);
