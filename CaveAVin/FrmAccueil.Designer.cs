@@ -35,16 +35,17 @@
             // 
             // BtnGestionDesCaves
             // 
-            BtnGestionDesCaves.Location = new Point(32, 42);
+            BtnGestionDesCaves.Location = new Point(32, 29);
             BtnGestionDesCaves.Name = "BtnGestionDesCaves";
-            BtnGestionDesCaves.Size = new Size(157, 29);
+            BtnGestionDesCaves.Size = new Size(223, 29);
             BtnGestionDesCaves.TabIndex = 0;
             BtnGestionDesCaves.Text = "Gestion des caves";
             BtnGestionDesCaves.UseVisualStyleBackColor = true;
+            BtnGestionDesCaves.Click += BtnGestionDesCaves_Click;
             // 
             // BtnBouteillesApogee
             // 
-            BtnBouteillesApogee.Location = new Point(212, 42);
+            BtnBouteillesApogee.Location = new Point(32, 87);
             BtnBouteillesApogee.Name = "BtnBouteillesApogee";
             BtnBouteillesApogee.Size = new Size(223, 29);
             BtnBouteillesApogee.TabIndex = 1;
@@ -53,18 +54,19 @@
             // 
             // BtnExport
             // 
-            BtnExport.Location = new Point(457, 42);
+            BtnExport.Location = new Point(32, 141);
             BtnExport.Name = "BtnExport";
-            BtnExport.Size = new Size(193, 29);
+            BtnExport.Size = new Size(223, 29);
             BtnExport.TabIndex = 2;
             BtnExport.Text = "Exportation des données";
             BtnExport.UseVisualStyleBackColor = true;
+            BtnExport.Click += BtnExport_Click;
             // 
             // FrmAccueil
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(686, 112);
+            ClientSize = new Size(291, 209);
             Controls.Add(BtnExport);
             Controls.Add(BtnBouteillesApogee);
             Controls.Add(BtnGestionDesCaves);

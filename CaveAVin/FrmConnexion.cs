@@ -84,5 +84,12 @@ namespace CaveAVin
                 return builder.ToString();
             }
         }
+
+        private void BtnAnnuler_Click(object sender, EventArgs e)
+        {
+            Close();
+            FrmCaveAVin frmCaveAVin = new FrmCaveAVin();
+            frmCaveAVin.Show();
+        }
     }
 }

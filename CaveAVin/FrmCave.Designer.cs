@@ -170,7 +170,7 @@
             BtnAnnuler.Text = "Annuler";
             BtnAnnuler.UseVisualStyleBackColor = true;
             // 
-            // FrmAjouterCave
+            // FrmCave
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -190,8 +190,9 @@
             Controls.Add(LblBouteilleParTiroir);
             Controls.Add(LblNombreTiroirs);
             Controls.Add(LblDesignation);
-            Name = "FrmAjouterCave";
+            Name = "FrmCave";
             Text = "FrmAjouterCave";
+            Load += FrmCave_Load;
             ResumeLayout(false);
             PerformLayout();
         }

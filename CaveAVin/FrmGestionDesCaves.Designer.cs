@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
-            LbxCavesAVin = new ListBox();
-            BtnAfficherBouteilles = new Button();
-            BtnAjouterCave = new Button();
-            BtnModifierCave = new Button();
             BtnSupprimerCave = new Button();
+            BtnModifierCave = new Button();
+            BtnAjouterCave = new Button();
+            BtnAfficherBouteilles = new Button();
+            LbxCavesAVin = new ListBox();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -51,6 +51,46 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Liste des caves à vin";
             // 
+            // BtnSupprimerCave
+            // 
+            BtnSupprimerCave.Location = new Point(184, 131);
+            BtnSupprimerCave.Name = "BtnSupprimerCave";
+            BtnSupprimerCave.Size = new Size(149, 29);
+            BtnSupprimerCave.TabIndex = 4;
+            BtnSupprimerCave.Text = "Supprimer la cave";
+            BtnSupprimerCave.UseVisualStyleBackColor = true;
+            BtnSupprimerCave.Click += BtnSupprimerCave_Click;
+            // 
+            // BtnModifierCave
+            // 
+            BtnModifierCave.Location = new Point(184, 86);
+            BtnModifierCave.Name = "BtnModifierCave";
+            BtnModifierCave.Size = new Size(149, 29);
+            BtnModifierCave.TabIndex = 3;
+            BtnModifierCave.Text = "Modifier la cave";
+            BtnModifierCave.UseVisualStyleBackColor = true;
+            BtnModifierCave.Click += BtnModifierCave_Click;
+            // 
+            // BtnAjouterCave
+            // 
+            BtnAjouterCave.Location = new Point(184, 39);
+            BtnAjouterCave.Name = "BtnAjouterCave";
+            BtnAjouterCave.Size = new Size(149, 29);
+            BtnAjouterCave.TabIndex = 2;
+            BtnAjouterCave.Text = "Ajouter une cave";
+            BtnAjouterCave.UseVisualStyleBackColor = true;
+            BtnAjouterCave.Click += BtnAjouterCave_Click;
+            // 
+            // BtnAfficherBouteilles
+            // 
+            BtnAfficherBouteilles.Location = new Point(6, 263);
+            BtnAfficherBouteilles.Name = "BtnAfficherBouteilles";
+            BtnAfficherBouteilles.Size = new Size(327, 29);
+            BtnAfficherBouteilles.TabIndex = 1;
+            BtnAfficherBouteilles.Text = "Afficher les bouteilles";
+            BtnAfficherBouteilles.UseVisualStyleBackColor = true;
+            BtnAfficherBouteilles.Click += BtnAfficherBouteilles_Click;
+            // 
             // LbxCavesAVin
             // 
             LbxCavesAVin.FormattingEnabled = true;
@@ -61,42 +101,6 @@
             LbxCavesAVin.TabIndex = 0;
             LbxCavesAVin.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
-            // BtnAfficherBouteilles
-            // 
-            BtnAfficherBouteilles.Location = new Point(6, 263);
-            BtnAfficherBouteilles.Name = "BtnAfficherBouteilles";
-            BtnAfficherBouteilles.Size = new Size(327, 29);
-            BtnAfficherBouteilles.TabIndex = 1;
-            BtnAfficherBouteilles.Text = "Afficher les bouteilles";
-            BtnAfficherBouteilles.UseVisualStyleBackColor = true;
-            // 
-            // BtnAjouterCave
-            // 
-            BtnAjouterCave.Location = new Point(184, 39);
-            BtnAjouterCave.Name = "BtnAjouterCave";
-            BtnAjouterCave.Size = new Size(149, 29);
-            BtnAjouterCave.TabIndex = 2;
-            BtnAjouterCave.Text = "Ajouter une cave";
-            BtnAjouterCave.UseVisualStyleBackColor = true;
-            // 
-            // BtnModifierCave
-            // 
-            BtnModifierCave.Location = new Point(184, 86);
-            BtnModifierCave.Name = "BtnModifierCave";
-            BtnModifierCave.Size = new Size(149, 29);
-            BtnModifierCave.TabIndex = 3;
-            BtnModifierCave.Text = "Modifier la cave";
-            BtnModifierCave.UseVisualStyleBackColor = true;
-            // 
-            // BtnSupprimerCave
-            // 
-            BtnSupprimerCave.Location = new Point(184, 131);
-            BtnSupprimerCave.Name = "BtnSupprimerCave";
-            BtnSupprimerCave.Size = new Size(149, 29);
-            BtnSupprimerCave.TabIndex = 4;
-            BtnSupprimerCave.Text = "Supprimer la cave";
-            BtnSupprimerCave.UseVisualStyleBackColor = true;
-            // 
             // FrmGestionDesCaves
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -104,7 +108,7 @@
             ClientSize = new Size(412, 339);
             Controls.Add(groupBox1);
             Name = "FrmGestionDesCaves";
-            Text = "FrmGestionDesCaves";
+            Text = "Gestion des caves";
             groupBox1.ResumeLayout(false);
             ResumeLayout(false);
         }
