@@ -33,12 +33,13 @@
             TbxAdresseMail = new TextBox();
             TbxMotDePasse = new TextBox();
             BtnConnexion = new Button();
+            BtnAnnuler = new Button();
             SuspendLayout();
             // 
             // LblAdresseMail
             // 
             LblAdresseMail.AutoSize = true;
-            LblAdresseMail.Location = new Point(63, 47);
+            LblAdresseMail.Location = new Point(46, 26);
             LblAdresseMail.Name = "LblAdresseMail";
             LblAdresseMail.Size = new Size(101, 20);
             LblAdresseMail.TabIndex = 0;
@@ -47,7 +48,7 @@
             // LblMotDePasse
             // 
             LblMotDePasse.AutoSize = true;
-            LblMotDePasse.Location = new Point(59, 89);
+            LblMotDePasse.Location = new Point(42, 68);
             LblMotDePasse.Name = "LblMotDePasse";
             LblMotDePasse.Size = new Size(105, 20);
             LblMotDePasse.TabIndex = 1;
@@ -56,7 +57,7 @@
             // 
             // TbxAdresseMail
             // 
-            TbxAdresseMail.Location = new Point(170, 44);
+            TbxAdresseMail.Location = new Point(153, 23);
             TbxAdresseMail.Name = "TbxAdresseMail";
             TbxAdresseMail.Size = new Size(174, 27);
             TbxAdresseMail.TabIndex = 2;
@@ -64,7 +65,7 @@
             // 
             // TbxMotDePasse
             // 
-            TbxMotDePasse.Location = new Point(170, 86);
+            TbxMotDePasse.Location = new Point(153, 65);
             TbxMotDePasse.Name = "TbxMotDePasse";
             TbxMotDePasse.PasswordChar = '*';
             TbxMotDePasse.Size = new Size(174, 27);
@@ -72,26 +73,37 @@
             // 
             // BtnConnexion
             // 
-            BtnConnexion.Location = new Point(59, 132);
+            BtnConnexion.Location = new Point(42, 111);
             BtnConnexion.Name = "BtnConnexion";
-            BtnConnexion.Size = new Size(285, 29);
+            BtnConnexion.Size = new Size(135, 29);
             BtnConnexion.TabIndex = 4;
             BtnConnexion.Text = "Connexion";
             BtnConnexion.UseVisualStyleBackColor = true;
             BtnConnexion.Click += BtnConnexion_Click;
             // 
+            // BtnAnnuler
+            // 
+            BtnAnnuler.Location = new Point(192, 111);
+            BtnAnnuler.Name = "BtnAnnuler";
+            BtnAnnuler.Size = new Size(135, 29);
+            BtnAnnuler.TabIndex = 5;
+            BtnAnnuler.Text = "Annuler";
+            BtnAnnuler.UseVisualStyleBackColor = true;
+            BtnAnnuler.Click += BtnAnnuler_Click;
+            // 
             // FrmConnexion
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(478, 219);
+            ClientSize = new Size(377, 162);
+            Controls.Add(BtnAnnuler);
             Controls.Add(BtnConnexion);
             Controls.Add(TbxMotDePasse);
             Controls.Add(TbxAdresseMail);
             Controls.Add(LblMotDePasse);
             Controls.Add(LblAdresseMail);
             Name = "FrmConnexion";
-            Text = "FrmConnexion";
+            Text = "Connexion";
             ResumeLayout(false);
             PerformLayout();
         }
@@ -103,5 +115,6 @@
         private TextBox TbxAdresseMail;
         private TextBox TbxMotDePasse;
         private Button BtnConnexion;
+        private Button BtnAnnuler;
     }
 }

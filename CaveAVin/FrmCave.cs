@@ -17,5 +17,9 @@ namespace CaveAVin
             InitializeComponent();
         }
 
+        private void FrmCave_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
