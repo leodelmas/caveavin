@@ -34,11 +34,13 @@
             BtnAjouterCave = new Button();
             BtnAfficherBouteilles = new Button();
             LbxCavesAVin = new ListBox();
+            BtnRetour = new Button();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(BtnRetour);
             groupBox1.Controls.Add(BtnSupprimerCave);
             groupBox1.Controls.Add(BtnModifierCave);
             groupBox1.Controls.Add(BtnAjouterCave);
@@ -85,7 +87,7 @@
             // 
             BtnAfficherBouteilles.Location = new Point(6, 263);
             BtnAfficherBouteilles.Name = "BtnAfficherBouteilles";
-            BtnAfficherBouteilles.Size = new Size(327, 29);
+            BtnAfficherBouteilles.Size = new Size(166, 29);
             BtnAfficherBouteilles.TabIndex = 1;
             BtnAfficherBouteilles.Text = "Afficher les bouteilles";
             BtnAfficherBouteilles.UseVisualStyleBackColor = true;
@@ -100,6 +102,16 @@
             LbxCavesAVin.Size = new Size(172, 224);
             LbxCavesAVin.TabIndex = 0;
             LbxCavesAVin.SelectedIndexChanged += listBox1_SelectedIndexChanged;
+            // 
+            // BtnRetour
+            // 
+            BtnRetour.Location = new Point(178, 263);
+            BtnRetour.Name = "BtnRetour";
+            BtnRetour.Size = new Size(155, 29);
+            BtnRetour.TabIndex = 5;
+            BtnRetour.Text = "Retour";
+            BtnRetour.UseVisualStyleBackColor = true;
+            BtnRetour.Click += button1_Click;
             // 
             // FrmGestionDesCaves
             // 
@@ -121,5 +133,6 @@
         private Button BtnSupprimerCave;
         private Button BtnModifierCave;
         private Button BtnAjouterCave;
+        private Button BtnRetour;
     }
 }
