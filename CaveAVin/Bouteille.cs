@@ -12,7 +12,7 @@ namespace CaveAVin.Models
         public bool EstApogee()
         {
             int anneeActuelle = DateTime.Now.Year;
-            int anneeFinApogee = Millesime + AnneeGardeMax;
+            int anneeFinApogee = (int)Millesime + (int)AnneeGardeMax;
 
             // Vérifie si l'année actuelle est entre l'année de début et de fin de l'apogée
             return anneeActuelle >= (Millesime + AnneeGardeMin) && anneeActuelle <= anneeFinApogee;
