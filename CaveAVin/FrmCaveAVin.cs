@@ -25,5 +25,10 @@ namespace CaveAVin
         {
 
         }
+
+        private void BtnQuitter_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

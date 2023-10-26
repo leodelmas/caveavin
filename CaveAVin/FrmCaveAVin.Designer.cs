@@ -73,6 +73,7 @@
             BtnQuitter.TabIndex = 3;
             BtnQuitter.Text = "Quitter l'application";
             BtnQuitter.UseVisualStyleBackColor = true;
+            BtnQuitter.Click += BtnQuitter_Click;
             // 
             // FrmCaveAVin
             // 

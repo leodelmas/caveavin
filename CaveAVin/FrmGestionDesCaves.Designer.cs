@@ -105,7 +105,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(412, 339);
+            ClientSize = new Size(374, 334);
             Controls.Add(groupBox1);
             Name = "FrmGestionDesCaves";
             Text = "Gestion des caves";

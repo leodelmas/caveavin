@@ -16,15 +16,12 @@ namespace CaveAVin
         public FrmGestionDesCaves()
         {
             InitializeComponent();
+            this.Load += FrmGestionDesCaves_Load;
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            using (var context = new CaveAvinContext())
-            {
-                LbxCavesAVin.DataSource = context.Caves.ToList();
-                LbxCavesAVin.DisplayMember = "designation";
-            }
+           
         }
 
         private void BtnAjouterCave_Click(object sender, EventArgs e)
@@ -49,20 +46,41 @@ namespace CaveAVin
                 return;
             }
 
-            using (var context = new CaveAvinContext())
+            DialogResult confirmation = MessageBox.Show("Êtes-vous sûr de vouloir supprimer cette cave?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (confirmation == DialogResult.Yes)
             {
-                context.Caves.Remove(caveSelectionnee);
-                context.SaveChanges();
-            }
+                using (var context = new CaveAvinContext())
+                {
+                    context.Caves.Remove(caveSelectionnee);
+                    context.SaveChanges();
+                }
 
-            // Rafraîchir la liste
-            listBox1_SelectedIndexChanged(sender, e);
+                // Rafraîchir la liste
+                FrmGestionDesCaves_Load(sender, e);
+            }
         }
 
         private void BtnAfficherBouteilles_Click(object sender, EventArgs e)
         {
 
         }
+
+        private void FrmGestionDesCaves_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                using (var context = new CaveAvinContext())
+                {
+                    LbxCavesAVin.DataSource = context.Caves.ToList();
+                    LbxCavesAVin.DisplayMember = "designation";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur lors du chargement des données : " + ex.Message);
+            }
+        }
+
 
     }
 }
