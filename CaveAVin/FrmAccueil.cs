@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CaveAVin.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,7 @@ namespace CaveAVin
         public FrmAccueil()
         {
             InitializeComponent();
+            LblUtilisateur.Text = InformationsGlobales.UtilisateurConnecte.Email;
         }
 
         private void BtnGestionDesCaves_Click(object sender, EventArgs e)
@@ -34,6 +36,26 @@ namespace CaveAVin
             Close();
             FrmApogee frmApogee = new FrmApogee();
             frmApogee.Show();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void BtnDeconnexion_Click(object sender, EventArgs e)
+        {
+            InformationsGlobales.UtilisateurConnecte = null;
+
+            Close();
+            FrmCaveAVin frmCaveAVin = new FrmCaveAVin();
+            frmCaveAVin.Show();
+        }
+
+        private void BtnQuitter_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
