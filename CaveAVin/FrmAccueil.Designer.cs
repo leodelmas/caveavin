@@ -51,6 +51,7 @@
             BtnBouteillesApogee.TabIndex = 1;
             BtnBouteillesApogee.Text = "Mes bouteilles à l'apogée";
             BtnBouteillesApogee.UseVisualStyleBackColor = true;
+            BtnBouteillesApogee.Click += BtnBouteillesApogee_Click;
             // 
             // BtnExport
             // 
