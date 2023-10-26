@@ -63,6 +63,7 @@
             Controls.Add(LbxApogee);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
             Name = "FrmApogee";
             Text = "Bouteille(s) à l'apogée";
             ResumeLayout(false);

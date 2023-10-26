@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCave));
             LblDesignation = new Label();
             LblNombreTiroirs = new Label();
             LblBouteilleParTiroir = new Label();
@@ -102,33 +103,34 @@
             // CbxFamille
             // 
             CbxFamille.FormattingEnabled = true;
-            CbxFamille.Location = new Point(91, 182);
+            CbxFamille.Location = new Point(265, 183);
             CbxFamille.Name = "CbxFamille";
             CbxFamille.Size = new Size(151, 28);
-            CbxFamille.TabIndex = 6;
+            CbxFamille.TabIndex = 5;
             CbxFamille.SelectedIndexChanged += CbxFamille_SelectedIndexChanged;
             // 
             // CbxFabricant
             // 
             CbxFabricant.FormattingEnabled = true;
-            CbxFabricant.Location = new Point(91, 146);
+            CbxFabricant.Location = new Point(265, 147);
             CbxFabricant.Name = "CbxFabricant";
             CbxFabricant.Size = new Size(151, 28);
-            CbxFabricant.TabIndex = 7;
+            CbxFabricant.TabIndex = 4;
             CbxFabricant.SelectedIndexChanged += CbxFabricant_SelectedIndexChanged;
             // 
             // TbxTemperature
             // 
-            TbxTemperature.Location = new Point(248, 118);
+            TbxTemperature.Location = new Point(265, 114);
             TbxTemperature.Name = "TbxTemperature";
+            TbxTemperature.PlaceholderText = "16";
             TbxTemperature.Size = new Size(58, 27);
-            TbxTemperature.TabIndex = 8;
+            TbxTemperature.TabIndex = 3;
             TbxTemperature.TextChanged += TbxTemperature_TextChanged;
             // 
             // LblDegres
             // 
             LblDegres.AutoSize = true;
-            LblDegres.Location = new Point(312, 121);
+            LblDegres.Location = new Point(329, 119);
             LblDegres.Name = "LblDegres";
             LblDegres.Size = new Size(65, 20);
             LblDegres.TabIndex = 9;
@@ -136,41 +138,44 @@
             // 
             // TbxNombreBouteillesParTiroir
             // 
-            TbxNombreBouteillesParTiroir.Location = new Point(241, 78);
+            TbxNombreBouteillesParTiroir.Location = new Point(265, 78);
             TbxNombreBouteillesParTiroir.Name = "TbxNombreBouteillesParTiroir";
+            TbxNombreBouteillesParTiroir.PlaceholderText = "8";
             TbxNombreBouteillesParTiroir.Size = new Size(88, 27);
-            TbxNombreBouteillesParTiroir.TabIndex = 10;
+            TbxNombreBouteillesParTiroir.TabIndex = 2;
             TbxNombreBouteillesParTiroir.TextChanged += TbxNombreBouteillesParTiroir_TextChanged;
             // 
             // TbxNombreTiroirs
             // 
-            TbxNombreTiroirs.Location = new Point(152, 40);
+            TbxNombreTiroirs.Location = new Point(265, 41);
             TbxNombreTiroirs.Name = "TbxNombreTiroirs";
+            TbxNombreTiroirs.PlaceholderText = "5";
             TbxNombreTiroirs.Size = new Size(125, 27);
-            TbxNombreTiroirs.TabIndex = 11;
+            TbxNombreTiroirs.TabIndex = 1;
             TbxNombreTiroirs.TextChanged += TbxNombreTiroirs_TextChanged;
             // 
             // TbxDesignation
             // 
-            TbxDesignation.Location = new Point(117, 9);
+            TbxDesignation.Location = new Point(265, 8);
             TbxDesignation.Name = "TbxDesignation";
+            TbxDesignation.PlaceholderText = "Nom";
             TbxDesignation.Size = new Size(125, 27);
-            TbxDesignation.TabIndex = 12;
+            TbxDesignation.TabIndex = 0;
             TbxDesignation.TextChanged += TbxDesignation_TextChanged;
             // 
             // BtnCreer
             // 
-            BtnCreer.Location = new Point(52, 227);
+            BtnCreer.Location = new Point(59, 227);
             BtnCreer.Name = "BtnCreer";
             BtnCreer.Size = new Size(94, 29);
             BtnCreer.TabIndex = 13;
-            BtnCreer.Text = "Créer";
+            BtnCreer.Text = "Ok";
             BtnCreer.UseVisualStyleBackColor = true;
             BtnCreer.Click += BtnCreer_Click;
             // 
             // BtnAnnuler
             // 
-            BtnAnnuler.Location = new Point(235, 227);
+            BtnAnnuler.Location = new Point(276, 227);
             BtnAnnuler.Name = "BtnAnnuler";
             BtnAnnuler.Size = new Size(94, 29);
             BtnAnnuler.TabIndex = 14;
@@ -183,7 +188,8 @@
             AcceptButton = BtnCreer;
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(403, 268);
+            CancelButton = BtnAnnuler;
+            ClientSize = new Size(434, 268);
             Controls.Add(BtnAnnuler);
             Controls.Add(BtnCreer);
             Controls.Add(TbxDesignation);
@@ -199,6 +205,8 @@
             Controls.Add(LblBouteilleParTiroir);
             Controls.Add(LblNombreTiroirs);
             Controls.Add(LblDesignation);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
             Name = "FrmCave";
             Text = "Ajouter/Modifier une cave";
             Load += FrmCave_Load;

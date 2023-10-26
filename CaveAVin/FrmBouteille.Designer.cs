@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBouteille));
             LblAppellation = new Label();
             LblCouleur = new Label();
             LblEmplacement = new Label();
@@ -114,7 +115,7 @@
             // 
             // BtnEnregistrer
             // 
-            BtnEnregistrer.Location = new Point(238, 263);
+            BtnEnregistrer.Location = new Point(26, 263);
             BtnEnregistrer.Name = "BtnEnregistrer";
             BtnEnregistrer.Size = new Size(166, 29);
             BtnEnregistrer.TabIndex = 14;
@@ -126,22 +127,25 @@
             // 
             TbxNomComplet.Location = new Point(223, 18);
             TbxNomComplet.Name = "TbxNomComplet";
+            TbxNomComplet.PlaceholderText = "Nom";
             TbxNomComplet.Size = new Size(181, 27);
-            TbxNomComplet.TabIndex = 15;
+            TbxNomComplet.TabIndex = 0;
             // 
             // TbxMillesime
             // 
             TbxMillesime.Location = new Point(223, 51);
             TbxMillesime.Name = "TbxMillesime";
+            TbxMillesime.PlaceholderText = "2008";
             TbxMillesime.Size = new Size(181, 27);
-            TbxMillesime.TabIndex = 16;
+            TbxMillesime.TabIndex = 1;
             // 
             // TbxAnneeGardeMin
             // 
             TbxAnneeGardeMin.Location = new Point(223, 84);
             TbxAnneeGardeMin.Name = "TbxAnneeGardeMin";
+            TbxAnneeGardeMin.PlaceholderText = "3";
             TbxAnneeGardeMin.Size = new Size(55, 27);
-            TbxAnneeGardeMin.TabIndex = 17;
+            TbxAnneeGardeMin.TabIndex = 2;
             // 
             // label1
             // 
@@ -156,8 +160,9 @@
             // 
             TbxAnneeGardeMax.Location = new Point(312, 84);
             TbxAnneeGardeMax.Name = "TbxAnneeGardeMax";
+            TbxAnneeGardeMax.PlaceholderText = "5";
             TbxAnneeGardeMax.Size = new Size(55, 27);
-            TbxAnneeGardeMax.TabIndex = 19;
+            TbxAnneeGardeMax.TabIndex = 3;
             // 
             // label2
             // 
@@ -172,15 +177,17 @@
             // 
             TbxNumTiroir.Location = new Point(223, 121);
             TbxNumTiroir.Name = "TbxNumTiroir";
+            TbxNumTiroir.PlaceholderText = "4";
             TbxNumTiroir.Size = new Size(181, 27);
-            TbxNumTiroir.TabIndex = 21;
+            TbxNumTiroir.TabIndex = 4;
             // 
             // TbxNumEmplacement
             // 
             TbxNumEmplacement.Location = new Point(223, 154);
             TbxNumEmplacement.Name = "TbxNumEmplacement";
+            TbxNumEmplacement.PlaceholderText = "3";
             TbxNumEmplacement.Size = new Size(181, 27);
-            TbxNumEmplacement.TabIndex = 22;
+            TbxNumEmplacement.TabIndex = 5;
             // 
             // CbxIdCouleur
             // 
@@ -188,7 +195,7 @@
             CbxIdCouleur.Location = new Point(223, 187);
             CbxIdCouleur.Name = "CbxIdCouleur";
             CbxIdCouleur.Size = new Size(181, 28);
-            CbxIdCouleur.TabIndex = 23;
+            CbxIdCouleur.TabIndex = 6;
             // 
             // CbxIdAppellation
             // 
@@ -196,11 +203,11 @@
             CbxIdAppellation.Location = new Point(223, 221);
             CbxIdAppellation.Name = "CbxIdAppellation";
             CbxIdAppellation.Size = new Size(181, 28);
-            CbxIdAppellation.TabIndex = 24;
+            CbxIdAppellation.TabIndex = 7;
             // 
             // BtnAnnuler
             // 
-            BtnAnnuler.Location = new Point(22, 263);
+            BtnAnnuler.Location = new Point(223, 263);
             BtnAnnuler.Name = "BtnAnnuler";
             BtnAnnuler.Size = new Size(166, 29);
             BtnAnnuler.TabIndex = 27;
@@ -210,8 +217,10 @@
             // 
             // FrmBouteille
             // 
+            AcceptButton = BtnEnregistrer;
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            CancelButton = BtnAnnuler;
             ClientSize = new Size(430, 310);
             Controls.Add(BtnAnnuler);
             Controls.Add(CbxIdAppellation);
@@ -232,6 +241,8 @@
             Controls.Add(LblApogee);
             Controls.Add(LblMillesime);
             Controls.Add(LblNomComplet);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
             Name = "FrmBouteille";
             Text = "Gestion d'une bouteille";
             Load += FrmBouteille_Load;

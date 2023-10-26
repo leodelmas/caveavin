@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmGestionDesCaves));
             groupBox1 = new GroupBox();
+            BtnRetour = new Button();
             BtnSupprimerCave = new Button();
             BtnModifierCave = new Button();
             BtnAjouterCave = new Button();
             BtnAfficherBouteilles = new Button();
             LbxCavesAVin = new ListBox();
-            BtnRetour = new Button();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -52,6 +53,16 @@
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Liste des caves à vin";
+            // 
+            // BtnRetour
+            // 
+            BtnRetour.Location = new Point(178, 263);
+            BtnRetour.Name = "BtnRetour";
+            BtnRetour.Size = new Size(155, 29);
+            BtnRetour.TabIndex = 5;
+            BtnRetour.Text = "Retour";
+            BtnRetour.UseVisualStyleBackColor = true;
+            BtnRetour.Click += button1_Click;
             // 
             // BtnSupprimerCave
             // 
@@ -103,22 +114,17 @@
             LbxCavesAVin.TabIndex = 0;
             LbxCavesAVin.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
-            // BtnRetour
-            // 
-            BtnRetour.Location = new Point(178, 263);
-            BtnRetour.Name = "BtnRetour";
-            BtnRetour.Size = new Size(155, 29);
-            BtnRetour.TabIndex = 5;
-            BtnRetour.Text = "Retour";
-            BtnRetour.UseVisualStyleBackColor = true;
-            BtnRetour.Click += button1_Click;
-            // 
             // FrmGestionDesCaves
             // 
+            AcceptButton = BtnAfficherBouteilles;
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            CancelButton = BtnRetour;
             ClientSize = new Size(374, 334);
             Controls.Add(groupBox1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
             Name = "FrmGestionDesCaves";
             Text = "Gestion des caves";
             groupBox1.ResumeLayout(false);
