@@ -11,9 +11,9 @@ public partial class Bouteille
 
     public int Millesime { get; set; }
 
-    public int AnneeGardeMin { get; set; }
+    public int? AnneeGardeMin { get; set; }
 
-    public int AnneeGardeMax { get; set; }
+    public int? AnneeGardeMax { get; set; }
 
     public int NumTiroir { get; set; }
 
