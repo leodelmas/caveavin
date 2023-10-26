@@ -76,7 +76,11 @@ namespace CaveAVin
                 LbxBouteilleParCave.Items.Clear();
                 using (var db = new CaveAvinContext())
                 {
-                    LbxBouteilleParCave.DataSource = db.Bouteilles.Where(b => b.IdCave == InformationsGlobales.CaveCourante.IdCave).ToList();
+                    LbxBouteilleParCave.DataSource = db.Bouteilles
+                            .Where(b => b.IdCave == InformationsGlobales.CaveCourante.IdCave)
+                            .Include(b => b.IdCouleurNavigation)
+                            .Include(b => b.IdAppellationNavigation)
+                            .ToList();
                     LbxBouteilleParCave.DisplayMember = "NomComplet";
                     LbxBouteilleParCave.ValueMember = "IdBouteille";
                 }
