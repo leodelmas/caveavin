@@ -26,7 +26,15 @@ namespace CaveAVin
 
         private void BtnModifierBouteille_Click(object sender, EventArgs e)
         {
-            FrmBouteille frmBouteille = new FrmBouteille();
+            Bouteille bouteille = (Bouteille)LbxBouteilleParCave.SelectedItem;
+
+            if (bouteille == null )
+            {
+                MessageBox.Show("Aucune bouteille n'a été sélectionnée.");
+                return;
+            }
+
+            FrmBouteille frmBouteille = new FrmBouteille(bouteille);
             frmBouteille.Show();
         }
 
