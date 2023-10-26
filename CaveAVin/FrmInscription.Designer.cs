@@ -33,12 +33,13 @@
             TbxAdresseMail = new TextBox();
             TbxMotDePasse = new TextBox();
             BtnInscription = new Button();
+            BtnAnnuler = new Button();
             SuspendLayout();
             // 
             // LblAdresseMail
             // 
             LblAdresseMail.AutoSize = true;
-            LblAdresseMail.Location = new Point(37, 53);
+            LblAdresseMail.Location = new Point(37, 27);
             LblAdresseMail.Name = "LblAdresseMail";
             LblAdresseMail.Size = new Size(101, 20);
             LblAdresseMail.TabIndex = 0;
@@ -47,7 +48,7 @@
             // LblMotDePasse
             // 
             LblMotDePasse.AutoSize = true;
-            LblMotDePasse.Location = new Point(37, 105);
+            LblMotDePasse.Location = new Point(37, 79);
             LblMotDePasse.Name = "LblMotDePasse";
             LblMotDePasse.Size = new Size(105, 20);
             LblMotDePasse.TabIndex = 1;
@@ -55,14 +56,14 @@
             // 
             // TbxAdresseMail
             // 
-            TbxAdresseMail.Location = new Point(167, 53);
+            TbxAdresseMail.Location = new Point(167, 27);
             TbxAdresseMail.Name = "TbxAdresseMail";
             TbxAdresseMail.Size = new Size(210, 27);
             TbxAdresseMail.TabIndex = 2;
             // 
             // TbxMotDePasse
             // 
-            TbxMotDePasse.Location = new Point(167, 102);
+            TbxMotDePasse.Location = new Point(167, 76);
             TbxMotDePasse.Name = "TbxMotDePasse";
             TbxMotDePasse.PasswordChar = '*';
             TbxMotDePasse.Size = new Size(210, 27);
@@ -70,26 +71,37 @@
             // 
             // BtnInscription
             // 
-            BtnInscription.Location = new Point(37, 139);
+            BtnInscription.Location = new Point(37, 113);
             BtnInscription.Name = "BtnInscription";
-            BtnInscription.Size = new Size(340, 29);
+            BtnInscription.Size = new Size(145, 29);
             BtnInscription.TabIndex = 4;
             BtnInscription.Text = "Inscription";
             BtnInscription.UseVisualStyleBackColor = true;
             BtnInscription.Click += BtnInscription_Click;
             // 
+            // BtnAnnuler
+            // 
+            BtnAnnuler.Location = new Point(220, 113);
+            BtnAnnuler.Name = "BtnAnnuler";
+            BtnAnnuler.Size = new Size(157, 29);
+            BtnAnnuler.TabIndex = 5;
+            BtnAnnuler.Text = "Annuler";
+            BtnAnnuler.UseVisualStyleBackColor = true;
+            BtnAnnuler.Click += BtnAnnuler_Click;
+            // 
             // FrmInscription
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(411, 194);
+            ClientSize = new Size(411, 175);
+            Controls.Add(BtnAnnuler);
             Controls.Add(BtnInscription);
             Controls.Add(TbxMotDePasse);
             Controls.Add(TbxAdresseMail);
             Controls.Add(LblMotDePasse);
             Controls.Add(LblAdresseMail);
             Name = "FrmInscription";
-            Text = "FrmInscription";
+            Text = "Inscription";
             ResumeLayout(false);
             PerformLayout();
         }
@@ -101,5 +113,6 @@
         private TextBox TbxAdresseMail;
         private TextBox TbxMotDePasse;
         private Button BtnInscription;
+        private Button BtnAnnuler;
     }
 }

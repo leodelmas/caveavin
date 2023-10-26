@@ -67,7 +67,7 @@ namespace CaveAVin
                 frmConnexion.Show();
             }
 
-         }
+        }
 
         private bool EstEmailValide(string email)
         {
@@ -96,6 +96,11 @@ namespace CaveAVin
             }
         }
 
-
+        private void BtnAnnuler_Click(object sender, EventArgs e)
+        {
+            Close();
+            FrmCaveAVin frmCaveAVin = new FrmCaveAVin();
+            frmCaveAVin.Show();
+        }
     }
 }
