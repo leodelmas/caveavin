@@ -51,6 +51,7 @@
             BtnBouteillesApogee.TabIndex = 1;
             BtnBouteillesApogee.Text = "Mes bouteilles à l'apogée";
             BtnBouteillesApogee.UseVisualStyleBackColor = true;
+            BtnBouteillesApogee.Click += BtnBouteillesApogee_Click;
             // 
             // BtnExport
             // 
@@ -66,7 +67,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(291, 209);
+            ClientSize = new Size(291, 203);
             Controls.Add(BtnExport);
             Controls.Add(BtnBouteillesApogee);
             Controls.Add(BtnGestionDesCaves);
