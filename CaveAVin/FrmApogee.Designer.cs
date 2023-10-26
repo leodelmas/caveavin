@@ -37,7 +37,7 @@
             LbxApogee.ItemHeight = 20;
             LbxApogee.Location = new Point(12, 10);
             LbxApogee.Name = "LbxApogee";
-            LbxApogee.Size = new Size(190, 204);
+            LbxApogee.Size = new Size(262, 244);
             LbxApogee.TabIndex = 0;
             LbxApogee.SelectedIndexChanged += LbxApogee_SelectedIndexChanged;
             // 
@@ -45,10 +45,10 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(216, 225);
+            ClientSize = new Size(301, 280);
             Controls.Add(LbxApogee);
             Name = "FrmApogee";
-            Text = "FrmApogee";
+            Text = "Bouteille(s) à l'apogée";
             ResumeLayout(false);
         }
 

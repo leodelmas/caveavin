@@ -28,5 +28,12 @@ namespace CaveAVin
         {
 
         }
+
+        private void BtnBouteillesApogee_Click(object sender, EventArgs e)
+        {
+            Close();
+            FrmApogee frmApogee = new FrmApogee();
+            frmApogee.Show();
+        }
     }
 }
