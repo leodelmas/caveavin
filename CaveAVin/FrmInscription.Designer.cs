@@ -61,7 +61,7 @@
             TbxAdresseMail.Name = "TbxAdresseMail";
             TbxAdresseMail.PlaceholderText = "utilisateur@domaine.fr";
             TbxAdresseMail.Size = new Size(210, 27);
-            TbxAdresseMail.TabIndex = 2;
+            TbxAdresseMail.TabIndex = 0;
             // 
             // TbxMotDePasse
             // 
@@ -69,7 +69,7 @@
             TbxMotDePasse.Name = "TbxMotDePasse";
             TbxMotDePasse.PasswordChar = '*';
             TbxMotDePasse.Size = new Size(210, 27);
-            TbxMotDePasse.TabIndex = 3;
+            TbxMotDePasse.TabIndex = 1;
             // 
             // BtnInscription
             // 
