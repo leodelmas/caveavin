@@ -44,8 +44,9 @@ namespace CaveAVin
                 TbxNombreTiroirs.Text = _cave.NbTiroirs.ToString();
                 TbxNombreBouteillesParTiroir.Text = _cave.NbBouteillesParTiroir.ToString();
                 TbxTemperature.Text = _cave.TemperatureFonctionnement.ToString();
-                CbxFabricant.SelectedItem = _cave.IdFabricant;
-                CbxFamille.SelectedItem = _cave.IdFamille;
+                CbxFabricant.SelectedValue = _cave.IdFabricant;
+                CbxFamille.SelectedValue = _cave.IdFamille;
+
 
             }
         }
