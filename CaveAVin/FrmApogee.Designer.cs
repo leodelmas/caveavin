@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmApogee));
             LbxApogee = new ListBox();
             BtnRetour = new Button();
             SuspendLayout();
@@ -44,7 +45,7 @@
             // 
             // BtnRetour
             // 
-            BtnRetour.Location = new Point(56, 239);
+            BtnRetour.Location = new Point(53, 225);
             BtnRetour.Name = "BtnRetour";
             BtnRetour.Size = new Size(176, 29);
             BtnRetour.TabIndex = 1;
@@ -56,9 +57,12 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(301, 280);
+            CancelButton = BtnRetour;
+            ClientSize = new Size(289, 268);
             Controls.Add(BtnRetour);
             Controls.Add(LbxApogee);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmApogee";
             Text = "Bouteille(s) à l'apogée";
             ResumeLayout(false);

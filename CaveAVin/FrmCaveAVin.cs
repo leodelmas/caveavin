@@ -30,5 +30,10 @@ namespace CaveAVin
         {
             Application.Exit();
         }
+
+        private void FrmCaveAVin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

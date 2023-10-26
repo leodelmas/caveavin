@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConnexion));
             LblAdresseMail = new Label();
             LblMotDePasse = new Label();
             TbxAdresseMail = new TextBox();
@@ -59,6 +60,7 @@
             // 
             TbxAdresseMail.Location = new Point(153, 23);
             TbxAdresseMail.Name = "TbxAdresseMail";
+            TbxAdresseMail.PlaceholderText = "utilisateur@domaine.fr";
             TbxAdresseMail.Size = new Size(174, 27);
             TbxAdresseMail.TabIndex = 2;
             TbxAdresseMail.TextChanged += TxbAdresseMail_TextChanged;
@@ -93,15 +95,20 @@
             // 
             // FrmConnexion
             // 
+            AcceptButton = BtnConnexion;
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(377, 162);
+            CancelButton = BtnAnnuler;
+            ClientSize = new Size(368, 162);
             Controls.Add(BtnAnnuler);
             Controls.Add(BtnConnexion);
             Controls.Add(TbxMotDePasse);
             Controls.Add(TbxAdresseMail);
             Controls.Add(LblMotDePasse);
             Controls.Add(LblAdresseMail);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
             Name = "FrmConnexion";
             Text = "Connexion";
             Load += FrmConnexion_Load;
