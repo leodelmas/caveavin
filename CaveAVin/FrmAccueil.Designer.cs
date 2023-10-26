@@ -30,7 +30,6 @@
         {
             BtnGestionDesCaves = new Button();
             BtnBouteillesApogee = new Button();
-            BtnExport = new Button();
             GbxGestion = new GroupBox();
             LblUtilisateur = new Label();
             BtnDeconnexion = new Button();
@@ -58,24 +57,13 @@
             BtnBouteillesApogee.UseVisualStyleBackColor = true;
             BtnBouteillesApogee.Click += BtnBouteillesApogee_Click;
             // 
-            // BtnExport
-            // 
-            BtnExport.Location = new Point(20, 124);
-            BtnExport.Name = "BtnExport";
-            BtnExport.Size = new Size(223, 29);
-            BtnExport.TabIndex = 2;
-            BtnExport.Text = "Exportation des données";
-            BtnExport.UseVisualStyleBackColor = true;
-            BtnExport.Click += BtnExport_Click;
-            // 
             // GbxGestion
             // 
-            GbxGestion.Controls.Add(BtnExport);
             GbxGestion.Controls.Add(BtnGestionDesCaves);
             GbxGestion.Controls.Add(BtnBouteillesApogee);
             GbxGestion.Location = new Point(14, 52);
             GbxGestion.Name = "GbxGestion";
-            GbxGestion.Size = new Size(267, 168);
+            GbxGestion.Size = new Size(267, 126);
             GbxGestion.TabIndex = 3;
             GbxGestion.TabStop = false;
             GbxGestion.Text = "Gestion";
@@ -89,11 +77,10 @@
             LblUtilisateur.Size = new Size(0, 18);
             LblUtilisateur.TabIndex = 4;
             LblUtilisateur.Tag = "";
-            LblUtilisateur.Click += label1_Click;
             // 
             // BtnDeconnexion
             // 
-            BtnDeconnexion.Location = new Point(14, 234);
+            BtnDeconnexion.Location = new Point(14, 184);
             BtnDeconnexion.Name = "BtnDeconnexion";
             BtnDeconnexion.Size = new Size(121, 31);
             BtnDeconnexion.TabIndex = 5;
@@ -103,7 +90,7 @@
             // 
             // BtnQuitter
             // 
-            BtnQuitter.Location = new Point(158, 234);
+            BtnQuitter.Location = new Point(160, 184);
             BtnQuitter.Name = "BtnQuitter";
             BtnQuitter.Size = new Size(121, 31);
             BtnQuitter.TabIndex = 6;
@@ -115,7 +102,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(291, 276);
+            ClientSize = new Size(291, 227);
             Controls.Add(BtnQuitter);
             Controls.Add(BtnDeconnexion);
             Controls.Add(LblUtilisateur);
@@ -131,7 +118,6 @@
 
         private Button BtnGestionDesCaves;
         private Button BtnBouteillesApogee;
-        private Button BtnExport;
         private GroupBox GbxGestion;
         private Label LblUtilisateur;
         private Button BtnDeconnexion;
