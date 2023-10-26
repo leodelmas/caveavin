@@ -1,4 +1,5 @@
 ﻿using CaveAVin.Models;
+using Microsoft.EntityFrameworkCore;
 using System.Data;
 
 namespace CaveAVin
@@ -75,7 +76,11 @@ namespace CaveAVin
                 LbxBouteilleParCave.Items.Clear();
                 using (var db = new CaveAvinContext())
                 {
-                    LbxBouteilleParCave.DataSource = db.Bouteilles.Where(b => b.IdCave == InformationsGlobales.CaveCourante.IdCave).ToList();
+                    LbxBouteilleParCave.DataSource = db.Bouteilles
+                            .Where(b => b.IdCave == InformationsGlobales.CaveCourante.IdCave)
+                            .Include(b => b.IdCouleurNavigation)
+                            .Include(b => b.IdAppellationNavigation)
+                            .ToList();
                     LbxBouteilleParCave.DisplayMember = "NomComplet";
                     LbxBouteilleParCave.ValueMember = "IdBouteille";
                 }
@@ -90,5 +95,40 @@ namespace CaveAVin
         {
             Close();
         }
+
+        private void BtnChercher_Click(object sender, EventArgs e)
+        {
+            string texteRecherche = TbxRecherche.Text.Trim().ToLower(); // Texte de recherche en minuscules
+
+            // Effectuer la recherche dans la liste des bouteilles (ex. Bouteille est la classe de vos bouteilles).
+            using (var db = new CaveAvinContext())
+            {
+                var bouteillesTrouvees = db.Bouteilles
+                        .Where(b =>
+                            EF.Functions.Like(b.NomComplet, "%" + texteRecherche + "%") ||
+                            EF.Functions.Like(b.Millesime.ToString(), "%" + texteRecherche + "%") ||
+                            EF.Functions.Like(b.NumTiroir.ToString(), "%" + texteRecherche + "%") ||
+                            EF.Functions.Like(b.NumEmplacement.ToString(), "%" + texteRecherche + "%")
+                           )
+                           .ToList();
+
+                if (bouteillesTrouvees.Any())
+                {
+                    // Afficher les résultats de la recherche dans la liste.
+                    LbxBouteilleParCave.DataSource = bouteillesTrouvees;
+                }
+                else
+                {
+                    // Aucun résultat trouvé.
+                    MessageBox.Show("Aucune bouteille contenant cette information n'a été trouvée.");
+                }
+            }
+        }
+
+        private void BtnEffacer_Click(object sender, EventArgs e)
+        {
+            ChargerListe();
+        }
     }
 }
+
