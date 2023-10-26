@@ -20,12 +20,14 @@ namespace CaveAVin
 
         private void BtnAjouterBouteille_Click(object sender, EventArgs e)
         {
-
+            FrmBouteille frmBouteille = new FrmBouteille();
+            frmBouteille.Show();
         }
 
         private void BtnModifierBouteille_Click(object sender, EventArgs e)
         {
-
+            FrmBouteille frmBouteille = new FrmBouteille();
+            frmBouteille.Show();
         }
 
         private void BtnSupprimerBouteille_Click(object sender, EventArgs e)
