@@ -32,6 +32,9 @@ namespace CaveAVin
                 }
             }
 
+            LbxApogee.DisplayMember = "NomComplet";
+            LbxApogee.ValueMember = "IdBouteille";
+
             if (LbxApogee.Items.Count == 0)
             {
                 LbxApogee.Items.Add("Aucune bouteille à l'apogée n'a été trouvée.");
@@ -41,6 +44,13 @@ namespace CaveAVin
         private void LbxApogee_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void BtnRetour_Click(object sender, EventArgs e)
+        {
+            Close();
+            FrmAccueil frmAccueil = new FrmAccueil();
+            frmAccueil.Show();
         }
     }
 }
