@@ -34,11 +34,13 @@
             BtnModifierBouteille = new Button();
             BtnAjouterBouteille = new Button();
             LbxBouteilleParCave = new ListBox();
+            BtnExporter = new Button();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(BtnExporter);
             groupBox1.Controls.Add(BtnRetour);
             groupBox1.Controls.Add(BtnSupprimerBouteille);
             groupBox1.Controls.Add(BtnModifierBouteille);
@@ -53,7 +55,7 @@
             // 
             // BtnRetour
             // 
-            BtnRetour.Location = new Point(236, 256);
+            BtnRetour.Location = new Point(8, 256);
             BtnRetour.Name = "BtnRetour";
             BtnRetour.Size = new Size(105, 29);
             BtnRetour.TabIndex = 5;
@@ -63,7 +65,7 @@
             // 
             // BtnSupprimerBouteille
             // 
-            BtnSupprimerBouteille.Location = new Point(347, 61);
+            BtnSupprimerBouteille.Location = new Point(347, 96);
             BtnSupprimerBouteille.Name = "BtnSupprimerBouteille";
             BtnSupprimerBouteille.Size = new Size(111, 29);
             BtnSupprimerBouteille.TabIndex = 4;
@@ -73,7 +75,7 @@
             // 
             // BtnModifierBouteille
             // 
-            BtnModifierBouteille.Location = new Point(347, 26);
+            BtnModifierBouteille.Location = new Point(347, 61);
             BtnModifierBouteille.Name = "BtnModifierBouteille";
             BtnModifierBouteille.Size = new Size(111, 29);
             BtnModifierBouteille.TabIndex = 3;
@@ -83,9 +85,9 @@
             // 
             // BtnAjouterBouteille
             // 
-            BtnAjouterBouteille.Location = new Point(8, 256);
+            BtnAjouterBouteille.Location = new Point(347, 26);
             BtnAjouterBouteille.Name = "BtnAjouterBouteille";
-            BtnAjouterBouteille.Size = new Size(105, 29);
+            BtnAjouterBouteille.Size = new Size(111, 29);
             BtnAjouterBouteille.TabIndex = 2;
             BtnAjouterBouteille.Text = "Ajouter";
             BtnAjouterBouteille.UseVisualStyleBackColor = true;
@@ -99,6 +101,16 @@
             LbxBouteilleParCave.Name = "LbxBouteilleParCave";
             LbxBouteilleParCave.Size = new Size(333, 224);
             LbxBouteilleParCave.TabIndex = 0;
+            // 
+            // BtnExporter
+            // 
+            BtnExporter.Location = new Point(247, 256);
+            BtnExporter.Name = "BtnExporter";
+            BtnExporter.Size = new Size(94, 29);
+            BtnExporter.TabIndex = 6;
+            BtnExporter.Text = "Exporter";
+            BtnExporter.UseVisualStyleBackColor = true;
+            BtnExporter.Click += BtnExporter_Click;
             // 
             // FrmGestionBouteillesParCave
             // 
@@ -121,5 +133,6 @@
         private Button BtnAjouterBouteille;
         private ListBox LbxBouteilleParCave;
         private Button BtnRetour;
+        private Button BtnExporter;
     }
 }
