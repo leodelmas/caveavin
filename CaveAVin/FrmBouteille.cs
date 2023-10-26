@@ -58,12 +58,25 @@ namespace CaveAVin
             {
                 using (CaveAvinContext db = new CaveAvinContext())
                 {
+                    int numTiroir = int.Parse(TbxNumTiroir.Text);
+                    int numEmplacement = int.Parse(TbxNumEmplacement.Text);
+
+                    // Vérifiez si un emplacement dans le même tiroir est déjà occupé.
+                    var bouteilleExistante = db.Bouteilles
+                        .FirstOrDefault(b => b.NumTiroir == numTiroir && b.NumEmplacement == numEmplacement);
+
+                    if (bouteilleExistante != null && (bouteilleExistante.IdBouteille != _bouteille.IdBouteille))
+                    {
+                        MessageBox.Show("L'emplacement dans ce tiroir est déjà occupé.");
+                        return;
+                    }
+
                     _bouteille.NomComplet = TbxNomComplet.Text;
                     _bouteille.Millesime = int.Parse(TbxMillesime.Text);
                     _bouteille.AnneeGardeMin = int.Parse(TbxAnneeGardeMin.Text);
                     _bouteille.AnneeGardeMax = int.Parse(TbxAnneeGardeMax.Text);
-                    _bouteille.NumTiroir = int.Parse(TbxNumTiroir.Text);
-                    _bouteille.NumEmplacement = int.Parse(TbxNumEmplacement.Text);
+                    _bouteille.NumTiroir = numTiroir;
+                    _bouteille.NumEmplacement = numEmplacement;
                     _bouteille.IdCouleur = ((Couleur)CbxIdCouleur.SelectedItem).IdCouleur;
                     _bouteille.IdAppellation = ((Appellation)CbxIdAppellation.SelectedItem).IdAppellation;
                     _bouteille.IdCave = InformationsGlobales.CaveCourante.IdCave;

@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
+            TbxRecherche = new TextBox();
+            BtnEffacer = new Button();
+            BtnChercher = new Button();
             BtnRetour = new Button();
             BtnSupprimerBouteille = new Button();
             BtnModifierBouteille = new Button();
@@ -39,6 +42,9 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(TbxRecherche);
+            groupBox1.Controls.Add(BtnEffacer);
+            groupBox1.Controls.Add(BtnChercher);
             groupBox1.Controls.Add(BtnRetour);
             groupBox1.Controls.Add(BtnSupprimerBouteille);
             groupBox1.Controls.Add(BtnModifierBouteille);
@@ -50,6 +56,33 @@
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
             groupBox1.Text = "Liste des bouteilles";
+            // 
+            // TbxRecherche
+            // 
+            TbxRecherche.Location = new Point(347, 133);
+            TbxRecherche.Name = "TbxRecherche";
+            TbxRecherche.Size = new Size(111, 27);
+            TbxRecherche.TabIndex = 8;
+            // 
+            // BtnEffacer
+            // 
+            BtnEffacer.Location = new Point(347, 201);
+            BtnEffacer.Name = "BtnEffacer";
+            BtnEffacer.Size = new Size(111, 29);
+            BtnEffacer.TabIndex = 7;
+            BtnEffacer.Text = "Effacer";
+            BtnEffacer.UseVisualStyleBackColor = true;
+            BtnEffacer.Click += BtnEffacer_Click;
+            // 
+            // BtnChercher
+            // 
+            BtnChercher.Location = new Point(347, 166);
+            BtnChercher.Name = "BtnChercher";
+            BtnChercher.Size = new Size(111, 29);
+            BtnChercher.TabIndex = 6;
+            BtnChercher.Text = "Chercher";
+            BtnChercher.UseVisualStyleBackColor = true;
+            BtnChercher.Click += BtnChercher_Click;
             // 
             // BtnRetour
             // 
@@ -97,7 +130,7 @@
             LbxBouteilleParCave.ItemHeight = 20;
             LbxBouteilleParCave.Location = new Point(8, 26);
             LbxBouteilleParCave.Name = "LbxBouteilleParCave";
-            LbxBouteilleParCave.Size = new Size(333, 224);
+            LbxBouteilleParCave.Size = new Size(333, 204);
             LbxBouteilleParCave.TabIndex = 0;
             // 
             // FrmGestionBouteillesParCave
@@ -110,6 +143,7 @@
             Text = "Gestion des bouteilles";
             Load += FrmGestionBouteillesParCave_Load;
             groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -121,5 +155,8 @@
         private Button BtnAjouterBouteille;
         private ListBox LbxBouteilleParCave;
         private Button BtnRetour;
+        private Button BtnEffacer;
+        private Button BtnChercher;
+        private TextBox TbxRecherche;
     }
 }
