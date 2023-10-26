@@ -104,6 +104,7 @@
             Controls.Add(LblAdresseMail);
             Name = "FrmConnexion";
             Text = "Connexion";
+            Load += FrmConnexion_Load;
             ResumeLayout(false);
             PerformLayout();
         }
