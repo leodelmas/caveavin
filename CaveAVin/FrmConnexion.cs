@@ -49,7 +49,7 @@ namespace CaveAVin
                     // Comparer les mots de passe
                     if (utilisateur.MotDePasse == motDePasseHashed)
                     {
-                        //InformationsGlobales.IdJoueurConnecte = utilisateur.Id;
+                        InformationsGlobales.UtilisateurConnecte = utilisateur;
 
                         Close();
                         FrmAccueil frmAccueil = new FrmAccueil();
@@ -83,6 +83,13 @@ namespace CaveAVin
                 }
                 return builder.ToString();
             }
+        }
+
+        private void BtnAnnuler_Click(object sender, EventArgs e)
+        {
+            Close();
+            FrmCaveAVin frmCaveAVin = new FrmCaveAVin();
+            frmCaveAVin.Show();
         }
     }
 }

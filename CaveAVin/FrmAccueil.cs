@@ -17,12 +17,14 @@ namespace CaveAVin
             InitializeComponent();
         }
 
-        private void BtnExporter_Click(object sender, EventArgs e)
+        private void BtnGestionDesCaves_Click(object sender, EventArgs e)
         {
-
+            Close();
+            FrmGestionDesCaves frmGestionDesCaves = new FrmGestionDesCaves();
+            frmGestionDesCaves.Show();
         }
 
-        private void BtnBouteillesApogee_Click(object sender, EventArgs e)
+        private void BtnExport_Click(object sender, EventArgs e)
         {
 
         }

@@ -43,9 +43,7 @@ public partial class CaveAvinContext : DbContext
 
             entity.ToTable("Appellation");
 
-            entity.Property(e => e.IdAppellation)
-                .ValueGeneratedNever()
-                .HasColumnName("idAppellation");
+            entity.Property(e => e.IdAppellation).HasColumnName("idAppellation");
             entity.Property(e => e.Nom)
                 .HasMaxLength(255)
                 .IsUnicode(false)
@@ -56,9 +54,7 @@ public partial class CaveAvinContext : DbContext
         {
             entity.HasKey(e => e.IdAvis).HasName("PK__Avis__DEFE99676AA631B9");
 
-            entity.Property(e => e.IdAvis)
-                .ValueGeneratedNever()
-                .HasColumnName("idAvis");
+            entity.Property(e => e.IdAvis).HasColumnName("idAvis");
             entity.Property(e => e.IdBouteille).HasColumnName("idBouteille");
             entity.Property(e => e.IdUtilisateur).HasColumnName("idUtilisateur");
             entity.Property(e => e.Note).HasColumnName("note");
@@ -81,9 +77,7 @@ public partial class CaveAvinContext : DbContext
 
             entity.ToTable("Bouteille");
 
-            entity.Property(e => e.IdBouteille)
-                .ValueGeneratedNever()
-                .HasColumnName("idBouteille");
+            entity.Property(e => e.IdBouteille).HasColumnName("idBouteille");
             entity.Property(e => e.AnneeGardeMax).HasColumnName("anneeGardeMax");
             entity.Property(e => e.AnneeGardeMin).HasColumnName("anneeGardeMin");
             entity.Property(e => e.IdAppellation).HasColumnName("idAppellation");
@@ -116,9 +110,7 @@ public partial class CaveAvinContext : DbContext
 
             entity.ToTable("Cave");
 
-            entity.Property(e => e.IdCave)
-                .ValueGeneratedNever()
-                .HasColumnName("idCave");
+            entity.Property(e => e.IdCave).HasColumnName("idCave");
             entity.Property(e => e.Designation)
                 .HasMaxLength(255)
                 .IsUnicode(false)
@@ -151,9 +143,7 @@ public partial class CaveAvinContext : DbContext
 
             entity.ToTable("Couleur");
 
-            entity.Property(e => e.IdCouleur)
-                .ValueGeneratedNever()
-                .HasColumnName("idCouleur");
+            entity.Property(e => e.IdCouleur).HasColumnName("idCouleur");
             entity.Property(e => e.Nom)
                 .HasMaxLength(255)
                 .IsUnicode(false)
@@ -166,9 +156,7 @@ public partial class CaveAvinContext : DbContext
 
             entity.ToTable("Fabricant");
 
-            entity.Property(e => e.IdFabricant)
-                .ValueGeneratedNever()
-                .HasColumnName("idFabricant");
+            entity.Property(e => e.IdFabricant).HasColumnName("idFabricant");
             entity.Property(e => e.Nom)
                 .HasMaxLength(255)
                 .IsUnicode(false)
@@ -181,9 +169,7 @@ public partial class CaveAvinContext : DbContext
 
             entity.ToTable("Famille");
 
-            entity.Property(e => e.IdFamille)
-                .ValueGeneratedNever()
-                .HasColumnName("idFamille");
+            entity.Property(e => e.IdFamille).HasColumnName("idFamille");
             entity.Property(e => e.Nom)
                 .HasMaxLength(255)
                 .IsUnicode(false)

@@ -106,6 +106,7 @@
             CbxFamille.Name = "CbxFamille";
             CbxFamille.Size = new Size(151, 28);
             CbxFamille.TabIndex = 6;
+            CbxFamille.SelectedIndexChanged += CbxFamille_SelectedIndexChanged;
             // 
             // CbxFabricant
             // 
@@ -114,6 +115,7 @@
             CbxFabricant.Name = "CbxFabricant";
             CbxFabricant.Size = new Size(151, 28);
             CbxFabricant.TabIndex = 7;
+            CbxFabricant.SelectedIndexChanged += CbxFabricant_SelectedIndexChanged;
             // 
             // TbxTemperature
             // 
@@ -121,6 +123,7 @@
             TbxTemperature.Name = "TbxTemperature";
             TbxTemperature.Size = new Size(58, 27);
             TbxTemperature.TabIndex = 8;
+            TbxTemperature.TextChanged += TbxTemperature_TextChanged;
             // 
             // LblDegres
             // 
@@ -137,6 +140,7 @@
             TbxNombreBouteillesParTiroir.Name = "TbxNombreBouteillesParTiroir";
             TbxNombreBouteillesParTiroir.Size = new Size(88, 27);
             TbxNombreBouteillesParTiroir.TabIndex = 10;
+            TbxNombreBouteillesParTiroir.TextChanged += TbxNombreBouteillesParTiroir_TextChanged;
             // 
             // TbxNombreTiroirs
             // 
@@ -144,6 +148,7 @@
             TbxNombreTiroirs.Name = "TbxNombreTiroirs";
             TbxNombreTiroirs.Size = new Size(125, 27);
             TbxNombreTiroirs.TabIndex = 11;
+            TbxNombreTiroirs.TextChanged += TbxNombreTiroirs_TextChanged;
             // 
             // TbxDesignation
             // 
@@ -151,6 +156,7 @@
             TbxDesignation.Name = "TbxDesignation";
             TbxDesignation.Size = new Size(125, 27);
             TbxDesignation.TabIndex = 12;
+            TbxDesignation.TextChanged += TbxDesignation_TextChanged;
             // 
             // BtnCreer
             // 
@@ -160,6 +166,7 @@
             BtnCreer.TabIndex = 13;
             BtnCreer.Text = "Créer";
             BtnCreer.UseVisualStyleBackColor = true;
+            BtnCreer.Click += BtnCreer_Click;
             // 
             // BtnAnnuler
             // 
@@ -170,7 +177,7 @@
             BtnAnnuler.Text = "Annuler";
             BtnAnnuler.UseVisualStyleBackColor = true;
             // 
-            // FrmAjouterCave
+            // FrmCave
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -190,8 +197,9 @@
             Controls.Add(LblBouteilleParTiroir);
             Controls.Add(LblNombreTiroirs);
             Controls.Add(LblDesignation);
-            Name = "FrmAjouterCave";
-            Text = "FrmAjouterCave";
+            Name = "FrmCave";
+            Text = "Ajouter/Modifier une cave";
+            Load += FrmCave_Load;
             ResumeLayout(false);
             PerformLayout();
         }
