@@ -33,22 +33,11 @@ namespace CaveAVin
             frmGestionDesCaves.Show();
         }
 
-        private void BtnExport_Click(object sender, EventArgs e)
-        {
-          
-        }
-
         private void BtnBouteillesApogee_Click(object sender, EventArgs e)
         {
             Close();
             FrmApogee frmApogee = new FrmApogee();
             frmApogee.Show();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-
         }
 
         private void BtnDeconnexion_Click(object sender, EventArgs e)
