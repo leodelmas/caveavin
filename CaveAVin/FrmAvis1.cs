@@ -111,6 +111,20 @@ namespace CaveAVin
                 LblNom.Text = "Informations non disponibles";
                 LblMillesime.Text = "Informations non disponibles";
             }
+
+            // Récupérer l'avis existant
+            using (var context = new CaveAvinContext())
+            {
+                var avisExistant = context.Avis
+                    .FirstOrDefault(a => a.IdBouteille == idBouteille && a.IdUtilisateur == InformationsGlobales.UtilisateurConnecte.IdUtilisateur);
+
+                if (avisExistant != null)
+                {
+                    // Préremplir les champs avec les informations de l'avis existant
+                    MettreAJourEtoiles(avisExistant.Note);
+                    RtbCommentaire.Text = avisExistant.Texte;
+                }
+            }
         }
 
         private void EnregistrerAvis(int idBouteille, int idUtilisateur, int note, string commentaire)
@@ -123,23 +137,24 @@ namespace CaveAVin
 
                 if (avisExistant != null)
                 {
-                    MessageBox.Show("Vous avez déjà laissé un avis pour cette bouteille.");
-                    return;
+                    avisExistant.Note = note;
+                    avisExistant.Texte = commentaire;
+                    MessageBox.Show("Avis mis à jour avec succès!");
                 }
                 else
                 {
+                    var avis = new Avi
+                    {
+                        IdBouteille = idBouteille,
+                        IdUtilisateur = idUtilisateur,
+                        Note = note,
+                        Texte = commentaire
+                    };
+
+                    context.Avis.Add(avis);
                     MessageBox.Show("Avis enregistré avec succès!");
                 }
 
-                var avis = new Avi
-                {
-                    IdBouteille = idBouteille,
-                    IdUtilisateur = idUtilisateur,
-                    Note = note,
-                    Texte = commentaire
-                };
-
-                context.Avis.Add(avis);
                 context.SaveChanges();
             }
         }
