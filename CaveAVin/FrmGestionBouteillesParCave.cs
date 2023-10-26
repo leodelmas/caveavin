@@ -129,6 +129,20 @@ namespace CaveAVin
         {
             ChargerListe();
         }
+
+        private void BtnAvis_Click(object sender, EventArgs e)
+        {
+            Bouteille bouteille = (Bouteille)LbxBouteilleParCave.SelectedItem;
+
+            if (bouteille == null)
+            {
+                MessageBox.Show("Aucune bouteille n'a été sélectionnée.");
+                return;
+            }
+
+            FrmAvis1 frmAvis = new FrmAvis1(bouteille.IdBouteille);
+            frmAvis.ShowDialog();
+        }
     }
 }
 

@@ -37,11 +37,13 @@
             BtnModifierBouteille = new Button();
             BtnAjouterBouteille = new Button();
             LbxBouteilleParCave = new ListBox();
+            BtnAvis = new Button();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(BtnAvis);
             groupBox1.Controls.Add(TbxRecherche);
             groupBox1.Controls.Add(BtnEffacer);
             groupBox1.Controls.Add(BtnChercher);
@@ -133,6 +135,16 @@
             LbxBouteilleParCave.Size = new Size(333, 204);
             LbxBouteilleParCave.TabIndex = 0;
             // 
+            // BtnAvis
+            // 
+            BtnAvis.Location = new Point(347, 96);
+            BtnAvis.Name = "BtnAvis";
+            BtnAvis.Size = new Size(111, 29);
+            BtnAvis.TabIndex = 9;
+            BtnAvis.Text = "Avis";
+            BtnAvis.UseVisualStyleBackColor = true;
+            BtnAvis.Click += BtnAvis_Click;
+            // 
             // FrmGestionBouteillesParCave
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -158,5 +170,6 @@
         private Button BtnEffacer;
         private Button BtnChercher;
         private TextBox TbxRecherche;
+        private Button BtnAvis;
     }
 }
